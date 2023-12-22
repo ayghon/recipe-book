@@ -5,6 +5,7 @@
   "scripts": {
     "android": "expo start --android",
     "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "gen:i18n": "./src/i18n/utils/generate-i18n-keys.ts",
     "ios": "expo start --ios",
     "lint": "eslint . --fix",
