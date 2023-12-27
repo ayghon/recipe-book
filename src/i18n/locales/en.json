@@ -1,4 +1,8 @@
 {
+  "home.header.title": "Home",
   "language.en": "English",
-  "language.fr": "French"
+  "language.fr": "French",
+  "recipe.create.header.title": "Add recipe",
+  "recipe.edit.header.title": "Edit recipe",
+  "settings.header.title": "Settings"
 }

@@ -10,7 +10,8 @@
       "@i18n": ["src/i18n/index"],
       "@constants": ["src/constants/index"],
       "@ui": ["src/ui/index"],
-      "@providers": ["src/providers/index"]
+      "@providers": ["src/providers/index"],
+      "@types": ["src/types/index"]
     }
   }
 }
