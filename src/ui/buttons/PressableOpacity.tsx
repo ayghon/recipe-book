@@ -12,6 +12,7 @@ export const PressableOpacity: FC<PressableOpacityProps> = ({ style, children, .
         },
         style,
       ]}
+      {...props}
     >
       {children}
     </Pressable>
