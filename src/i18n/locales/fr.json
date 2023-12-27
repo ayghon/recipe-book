@@ -4,5 +4,6 @@
   "home.header.title": "Home",
   "recipe.create.header.title": "Ajouter une recette",
   "recipe.edit.header.title": "Modifier une recette",
-  "settings.header.title": "Paramètres"
+  "settings.header.title": "Paramètres",
+  "settings.language.label": "Langue"
 }

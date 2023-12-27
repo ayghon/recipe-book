@@ -26,5 +26,8 @@ export const i18nKeys = {
     header: {
       title: 'settings.header.title',
     },
+    language: {
+      label: 'settings.language.label',
+    },
   },
 };

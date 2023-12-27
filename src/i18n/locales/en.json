@@ -4,5 +4,6 @@
   "language.fr": "French",
   "recipe.create.header.title": "Add recipe",
   "recipe.edit.header.title": "Edit recipe",
-  "settings.header.title": "Settings"
+  "settings.header.title": "Settings",
+  "settings.language.label": "Language"
 }
