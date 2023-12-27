@@ -32,6 +32,7 @@ export type Step = {
 };
 
 export type Recipe = {
+  id: string;
   title: string;
   ingredients: IngredientSection[];
   steps: Step[];

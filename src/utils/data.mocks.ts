@@ -2,6 +2,7 @@ import { Recipe } from '@types';
 
 export const recipesMocks: Recipe[] = [
   {
+    id: '1',
     image: 'https://i.nefisyemektarifleri.com/2023/12/26/airfryer-yogurtlu-sebze-mezesi.jpg',
     ingredients: [
       {
@@ -55,6 +56,7 @@ export const recipesMocks: Recipe[] = [
     title: 'Airfryer Yoğurtlu Sebze Mezesi Tarifi İçin Malzemeler',
   },
   {
+    id: '2',
     image:
       'https://i.nefisyemektarifleri.com/2023/12/27/siviyagli-portakalli-catlak-kurabiyevideolu.jpg',
     ingredients: [
