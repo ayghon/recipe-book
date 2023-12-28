@@ -25,6 +25,7 @@
     "@tamagui/config": "^1.79.17",
     "expo": "~49.0.15",
     "expo-constants": "~14.4.2",
+    "expo-image-picker": "~14.3.2",
     "expo-linear-gradient": "~12.3.0",
     "expo-linking": "~5.0.2",
     "expo-localization": "~14.3.0",
@@ -41,7 +42,9 @@
     "react-native-screens": "~3.22.0",
     "react-native-web": "~0.19.6",
     "tamagui": "^1.79.17",
-    "tamagui-loader": "^1.79.17"
+    "tamagui-loader": "^1.79.17",
+    "zustand": "^4.4.7",
+    "expo-crypto": "~12.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

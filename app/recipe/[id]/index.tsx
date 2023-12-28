@@ -1,13 +1,25 @@
+import { useRecipeStore } from '@providers';
 import { Routes, SearchParamList } from '@types';
 import { ContentContainer } from '@ui';
-import { recipesMocks } from '@utils';
-import { useLocalSearchParams } from 'expo-router';
+import { useLocalSearchParams, useRouter } from 'expo-router';
 import { Image, ScrollView, Text, XStack, YStack } from 'tamagui';
 
 export default function ViewRecipeScreen() {
+  const { back } = useRouter();
   const { id } = useLocalSearchParams<SearchParamList<Routes.RecipeView>>();
+  const { getById } = useRecipeStore();
 
-  const { image, ingredients, title, steps } = recipesMocks[0];
+  if (!id) {
+    return back();
+  }
+
+  const recipe = getById(id);
+
+  if (!recipe) {
+    return back();
+  }
+
+  const { image, ingredients, title, steps } = recipe;
 
   return (
     <ContentContainer>

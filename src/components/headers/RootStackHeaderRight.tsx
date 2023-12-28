@@ -3,14 +3,16 @@ import { Routes } from '@types';
 import { Link } from 'expo-router';
 import { XStack } from 'tamagui';
 
+import { headerStyles } from './header.styles';
+
 export const RootStackHeaderRight = () => {
   return (
-    <XStack marginEnd="$8" columnGap="$4">
+    <XStack columnGap="$2" marginEnd="$2">
       <Link asChild href={Routes.RecipeCreate}>
-        <MaterialIcons name="add" size={24} />
+        <MaterialIcons style={headerStyles.icon} name="add" size={24} />
       </Link>
       <Link asChild href={Routes.Settings}>
-        <MaterialIcons name="more-vert" size={24} />
+        <MaterialIcons style={headerStyles.icon} name="more-vert" size={24} />
       </Link>
     </XStack>
   );

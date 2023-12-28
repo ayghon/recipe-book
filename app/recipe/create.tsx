@@ -1,9 +1,20 @@
-import { Text, View } from 'tamagui';
+import { RecipeForm, RecipeFormValues } from '@components';
+import { useRecipeStore } from '@providers';
+import { ContentContainer } from '@ui';
+import { useRouter } from 'expo-router';
 
 export default function CreateRecipeScreen() {
+  const { add } = useRecipeStore();
+  const { back } = useRouter();
+
+  const onSubmit = (values: RecipeFormValues) => {
+    add(values);
+    back();
+  };
+
   return (
-    <View alignItems="center" flex={1} justifyContent="center">
-      <Text>Create</Text>
-    </View>
+    <ContentContainer>
+      <RecipeForm onSubmit={onSubmit} />
+    </ContentContainer>
   );
 }

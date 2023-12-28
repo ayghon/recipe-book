@@ -1,4 +1,4 @@
-import { ViewRecipeHeaderRight, RootStackHeaderRight } from '@components';
+import { ViewRecipeHeaderRight, HomeHeader } from '@components';
 import { i18nKeys } from '@i18n';
 import { AppProvider } from '@providers';
 import { Routes } from '@types';
@@ -21,7 +21,7 @@ const RootStack = () => {
       <Stack.Screen
         name={Routes.Home}
         options={{
-          headerRight: RootStackHeaderRight,
+          header: HomeHeader,
           title: t(i18nKeys.home.header.title),
         }}
       />

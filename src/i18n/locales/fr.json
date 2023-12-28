@@ -5,5 +5,16 @@
   "recipe.create.header.title": "Ajouter une recette",
   "recipe.edit.header.title": "Modifier une recette",
   "settings.header.title": "Paramètres",
-  "settings.language.label": "Langue"
+  "settings.language.label": "Langue",
+  "ui.fields.validation.required.message": "Champ obligatoire",
+  "components.recipe_form.input.placeholder": "Titre",
+  "components.recipe_form.button.add": "Ajouter",
+  "components.recipe_form.button.modify": "Modifier",
+  "common.cancel": "Annuler",
+  "common.no": "Non",
+  "common.yes": "Oui",
+  "recipe.edit.alert.modify.description": "Etes-vous sûr de vouloir modifier cette recette ?",
+  "recipe.edit.alert.modify.title": "Confirmer modification",
+  "recipe.view.alert.delete.description": "Etes-vous sûr de vouloir supprimer cette recette ?",
+  "recipe.view.alert.delete.title": "Confirmer suppression"
 }

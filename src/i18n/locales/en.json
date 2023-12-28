@@ -1,9 +1,20 @@
 {
+  "common.cancel": "Cancel",
+  "common.no": "No",
+  "common.yes": "Yes",
+  "components.recipe_form.button.add": "Add",
+  "components.recipe_form.button.modify": "Modify",
+  "components.recipe_form.input.placeholder": "Title",
   "home.header.title": "Home",
   "language.en": "English",
   "language.fr": "French",
   "recipe.create.header.title": "Add recipe",
+  "recipe.edit.alert.modify.description": "Are you sure you want to modify this recipe ?",
+  "recipe.edit.alert.modify.title": "Confirm modify",
   "recipe.edit.header.title": "Edit recipe",
+  "recipe.view.alert.delete.description": "Are you sure you want to delete this recipe ?",
+  "recipe.view.alert.delete.title": "Confirm delete",
   "settings.header.title": "Settings",
-  "settings.language.label": "Language"
+  "settings.language.label": "Language",
+  "ui.fields.validation.required.message": "Required"
 }

@@ -1,6 +1,7 @@
+import { useRecipeStore } from '@providers';
 import { Routes } from '@types';
 import { ContentContainer, RecipeCard } from '@ui';
-import { getPath, recipesMocks } from '@utils';
+import { getPath } from '@utils';
 import { useRouter } from 'expo-router';
 import { FlatList } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
@@ -8,6 +9,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 export default function HomeScreen() {
   const { push } = useRouter();
   const { bottom } = useSafeAreaInsets();
+  const { recipes } = useRecipeStore();
 
   const onRecipePress = (id: string) => {
     push(getPath(Routes.RecipeView, { id }));
@@ -18,7 +20,7 @@ export default function HomeScreen() {
       <FlatList
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
-        data={recipesMocks}
+        data={recipes}
         style={{
           height: '100%',
           marginBottom: bottom,
