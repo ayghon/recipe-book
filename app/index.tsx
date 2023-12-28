@@ -1,10 +1,9 @@
 import { Routes } from '@types';
 import { ContentContainer, RecipeCard } from '@ui';
 import { getPath, recipesMocks } from '@utils';
-import { Link, useRouter } from 'expo-router';
+import { useRouter } from 'expo-router';
 import { FlatList } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Text } from 'tamagui';
 
 export default function HomeScreen() {
   const { push } = useRouter();
@@ -16,9 +15,6 @@ export default function HomeScreen() {
 
   return (
     <ContentContainer>
-      <Link href={getPath(Routes.RecipeEdit, { id: '456' })}>
-        <Text>Edit Recipe 456</Text>
-      </Link>
       <FlatList
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}

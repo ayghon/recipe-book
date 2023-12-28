@@ -1,23 +1,13 @@
 import { Routes, SearchParamList } from '@types';
 import { ContentContainer } from '@ui';
 import { recipesMocks } from '@utils';
-import { useLocalSearchParams, useNavigation } from 'expo-router';
-import { useEffect } from 'react';
+import { useLocalSearchParams } from 'expo-router';
 import { Image, ScrollView, Text, XStack, YStack } from 'tamagui';
 
 export default function ViewRecipeScreen() {
   const { id } = useLocalSearchParams<SearchParamList<Routes.RecipeView>>();
-  const { setOptions } = useNavigation();
 
   const { image, ingredients, title, steps } = recipesMocks[0];
-
-  useEffect(() => {
-    const recipeTitle = `View ${id}`;
-
-    setOptions({
-      headerTitle: recipeTitle,
-    });
-  }, [id]);
 
   return (
     <ContentContainer>
