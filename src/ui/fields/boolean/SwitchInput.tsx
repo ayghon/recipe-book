@@ -27,18 +27,18 @@ export const SwitchInput: FC<SwitchInputProps> = ({
             {label}
             {isRequired && '*'}
           </Text>
-          <Separator borderColor={theme.gray8.val} minHeight={20} vertical />
+          <Separator borderColor="$primaryLight" minHeight={20} vertical />
         </XStack>
       )}
       <Switch
         ref={inputRef}
         size="$4"
-        backgroundColor={value ?? defaultChecked ? theme.blue7.val : theme.gray7.val}
+        backgroundColor={value ?? defaultChecked ? '$primaryLight' : theme.gray7.val}
         checked={value}
         onCheckedChange={onChange}
         defaultChecked={defaultChecked}
       >
-        <Switch.Thumb backgroundColor={theme.blue10.val} animation="quick" />
+        <Switch.Thumb backgroundColor="$primary" animation="quick" />
       </Switch>
     </XStack>
   );

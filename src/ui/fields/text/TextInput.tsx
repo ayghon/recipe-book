@@ -49,7 +49,7 @@ export const TextInput: FC<TextInputProps> = ({
         )}
         <Input
           ref={inputRef}
-          selectionColor={theme.blue8.val}
+          selectionColor="grey"
           flex={1}
           borderWidth={0}
           onChangeText={onChange}

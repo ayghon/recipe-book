@@ -4,13 +4,12 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ContentContainer, ListItemButton, SheetModal } from '@ui';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Text, useTheme, View } from 'tamagui';
+import { Text, View } from 'tamagui';
 
 export default function SettingsScreen() {
   const [t, { language, changeLanguage }] = useTranslation();
   const languageText = t(i18nKeys.language[language as keyof typeof i18nKeys.language]);
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
-  const theme = useTheme();
 
   const handleLanguagePress = async (value: string) => {
     await changeLanguage(value);
@@ -30,7 +29,7 @@ export default function SettingsScreen() {
           {Object.values(Language).map((lang) => (
             <Text
               key={lang}
-              color={language === lang ? theme.blue8.val : undefined}
+              color={language === lang ? '$primary' : undefined}
               fontSize={16}
               onPress={() => handleLanguagePress(lang)}
             >

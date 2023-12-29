@@ -46596,6 +46596,13 @@
           "name": "color-192",
           "val": "hsl(53, 100%, 91.0%)",
           "variable": ""
+        },
+        "primary": {
+          "isVar": true,
+          "key": "$primary",
+          "name": "color-193",
+          "val": "#009688",
+          "variable": ""
         }
       },
       "radius": {
@@ -48816,6 +48823,13 @@
         "key": "$yellow12Dark",
         "name": "color-192",
         "val": "hsl(53, 100%, 91.0%)",
+        "variable": ""
+      },
+      "$color.primary": {
+        "isVar": true,
+        "key": "$primary",
+        "name": "color-193",
+        "val": "#009688",
         "variable": ""
       },
       "$radius.0": {

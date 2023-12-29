@@ -7,7 +7,7 @@ import { FC, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Button, ScrollView, useTheme, View, YStack } from 'tamagui';
+import { Button, ScrollView, View, YStack } from 'tamagui';
 
 import { RecipeIngredientSectionSection } from './RecipeIngredientSectionSection';
 import { RecipeStepsSection } from './RecipeStepsSection';
@@ -23,7 +23,6 @@ type RecipeFormProps = {
 export const RecipeForm: FC<RecipeFormProps> = ({ data, onSubmit }) => {
   const { t } = useTranslation();
   const { bottom } = useSafeAreaInsets();
-  const theme = useTheme();
   const [image, setImage] = useState(data?.image ?? '');
 
   const validationSchema = useRecipeFormValidationSchema();
@@ -84,7 +83,7 @@ export const RecipeForm: FC<RecipeFormProps> = ({ data, onSubmit }) => {
           marginBottom={bottom}
           bordered={2}
           color="white"
-          backgroundColor={theme.blue11.val}
+          backgroundColor="$primary"
           onPress={methods.handleSubmit(onSubmit)}
         >
           {data
