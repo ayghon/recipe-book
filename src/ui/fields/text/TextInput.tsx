@@ -28,7 +28,7 @@ export const TextInput: FC<TextInputProps> = ({
   const theme = useTheme();
 
   return (
-    <YStack rowGap={14}>
+    <YStack flex={1} rowGap={14}>
       {label && (
         <Text fontSize={16} fontWeight="800">
           {label}
@@ -36,13 +36,10 @@ export const TextInput: FC<TextInputProps> = ({
         </Text>
       )}
       <XStack
-        borderBottomEndRadius={0}
-        borderBottomStartRadius={0}
-        borderTopLeftRadius={5}
-        borderTopRightRadius={5}
+        borderRadius={5}
         columnGap={4}
-        borderBottomWidth={1}
-        borderBottomColor={theme.color9.val}
+        borderWidth={1}
+        borderColor={theme.color9.val}
         justifyContent="space-between"
       >
         {startIcon && (
@@ -53,7 +50,6 @@ export const TextInput: FC<TextInputProps> = ({
         <Input
           ref={inputRef}
           selectionColor={theme.blue8.val}
-          outlineStyle="none"
           flex={1}
           borderWidth={0}
           onChangeText={onChange}

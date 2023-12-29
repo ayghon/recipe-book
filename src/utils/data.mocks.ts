@@ -1,4 +1,4 @@
-import { Recipe } from '@types';
+import { MeasurementUnit, Recipe } from '@types';
 
 export const recipesMocks: Recipe[] = [
   {
@@ -7,24 +7,32 @@ export const recipesMocks: Recipe[] = [
     ingredients: [
       {
         items: [
-          { count: 1, measureUnit: 'piece', name: 'kabak' },
-          { count: 1, measureUnit: 'piece', name: 'patates' },
-          { count: 1, measureUnit: 'piece', name: 'havuç' },
-          { count: 1, measureUnit: 'piece', name: 'yeşil biber' },
-          { count: 1, measureUnit: 'piece', name: 'kırmızı biber' },
-          { countEnd: 4, countStart: 3, measureUnit: 'piece', name: 'sarımsak' },
+          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'kabak' },
+          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'patates' },
+          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'havuç' },
+          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'yeşil biber' },
+          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'kırmızı biber' },
+          { countEnd: 4, countStart: 3, measureUnit: MeasurementUnit.Piece, name: 'sarımsak' },
         ],
       },
       {
         items: [
-          { countEnd: 4, countStart: 3, measureUnit: 'table-spoon', name: 'zeytinyağı' },
-          { count: 1, measureUnit: 'coffee-spoon', name: 'domates salçası' },
-          { count: 1, measureUnit: 'coffee-spoon', name: 'kekik' },
-          { count: 1, measureUnit: 'tea-spoon', name: 'tuz' },
+          {
+            countEnd: 4,
+            countStart: 3,
+            measureUnit: MeasurementUnit.CoffeeSpoon,
+            name: 'zeytinyağı',
+          },
+          { countStart: 1, measureUnit: MeasurementUnit.CoffeeSpoon, name: 'domates salçası' },
+          { countStart: 1, measureUnit: MeasurementUnit.CoffeeSpoon, name: 'kekik' },
+          { countStart: 1, measureUnit: MeasurementUnit.TeaSpoon, name: 'tuz' },
         ],
         title: 'Sosu için',
       },
-      { items: [{ measureUnit: 'as-needed', name: 'Süzme yoğurt' }], title: 'Servis için' },
+      {
+        items: [{ countStart: 1, measureUnit: MeasurementUnit.AsNeeded, name: 'Süzme yoğurt' }],
+        title: 'Servis için',
+      },
     ],
     steps: [
       {
@@ -62,27 +70,27 @@ export const recipesMocks: Recipe[] = [
     ingredients: [
       {
         items: [
-          { count: 2, measureUnit: 'piece', name: 'yumurta' },
-          { count: 1, measureUnit: 'tea-spoon', name: 'şeker' },
-          { count: 0.5, measureUnit: 'tea-spoon', name: 'sıvı yağ' },
-          { count: 0.5, measureUnit: 'tea-spoon', name: 'portakal suyu' },
-          { count: 1, measureUnit: 'as-needed', name: 'portakal kabuğu rendesi' },
+          { countStart: 2, measureUnit: MeasurementUnit.Piece, name: 'yumurta' },
+          { countStart: 1, measureUnit: MeasurementUnit.TeaSpoon, name: 'şeker' },
+          { countStart: 0.5, measureUnit: MeasurementUnit.TeaSpoon, name: 'sıvı yağ' },
+          { countStart: 0.5, measureUnit: MeasurementUnit.TeaSpoon, name: 'portakal suyu' },
+          { countStart: 1, measureUnit: MeasurementUnit.AsNeeded, name: 'portakal kabuğu rendesi' },
           {
             comment: 'Renk versin diye kullandım yoksa kullanmak zorunda değilsiniz',
-            count: 1,
+            countStart: 1,
             isOptional: true,
-            measureUnit: 'tea-spoon',
+            measureUnit: MeasurementUnit.TeaSpoon,
             name: 'zerdeçal',
           },
-          { countEnd: 4, countStart: 3.5, measureUnit: 'glass', name: 'un' },
-          { count: 1, measureUnit: 'piece', name: 'kabartma tozu' },
+          { countEnd: 4, countStart: 3.5, measureUnit: MeasurementUnit.Glass, name: 'un' },
+          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'kabartma tozu' },
         ],
       },
       {
         items: [
           {
-            count: 4,
-            measureUnit: 'table-spoon',
+            countStart: 4,
+            measureUnit: MeasurementUnit.TableSpoon,
             name: 'pudra şekeri',
           },
         ],

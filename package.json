@@ -20,11 +20,13 @@
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
     "@expo/webpack-config": "^19.0.0",
+    "@hookform/resolvers": "^3.3.3",
     "@react-native-async-storage/async-storage": "1.18.2",
     "@tamagui/babel-plugin": "^1.79.17",
     "@tamagui/config": "^1.79.17",
     "expo": "~49.0.15",
     "expo-constants": "~14.4.2",
+    "expo-crypto": "~12.4.1",
     "expo-image-picker": "~14.3.2",
     "expo-linear-gradient": "~12.3.0",
     "expo-linking": "~5.0.2",
@@ -43,8 +45,8 @@
     "react-native-web": "~0.19.6",
     "tamagui": "^1.79.17",
     "tamagui-loader": "^1.79.17",
-    "zustand": "^4.4.7",
-    "expo-crypto": "~12.4.1"
+    "yup": "^1.3.3",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

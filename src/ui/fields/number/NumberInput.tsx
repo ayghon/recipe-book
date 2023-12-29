@@ -1,21 +1,23 @@
-import React, { FC, ReactNode } from 'react';
+import React, { FC, ReactNode, Ref } from 'react';
+import { TextInput as RNTextInput } from 'react-native';
 
 import { TextInput } from '../text';
 
 export type NumberInputProps = {
-  onChange: (value: number) => void;
-  value?: number;
+  onChange: (value?: string) => void;
+  value?: string;
   placeholder?: string;
   label?: string;
   error?: string;
   autoFocus?: boolean;
   startIcon?: ReactNode;
   endIcon?: ReactNode;
+  inputRef?: Ref<RNTextInput>;
+  isRequired?: boolean;
 };
 
-const parseText = (text: string): number | null => {
-  const textRemoved = text.replace(/[^0-9]/g, '');
-  const parsedValue = parseInt(textRemoved, 10);
+export const parseText = (text: string): number | null => {
+  const parsedValue = parseFloat(text);
 
   if (isNaN(parsedValue)) {
     return null;
@@ -33,28 +35,22 @@ export const NumberInput: FC<NumberInputProps> = ({
   value,
   onChange,
   placeholder,
+  isRequired,
 }) => {
-  const handleChange = (text: string) => {
-    const parsedText = parseText(text);
-
-    if (parsedText) {
-      return onChange(parsedText);
-    }
-  };
-
   return (
     <TextInput
       autoCapitalize="none"
       autoFocus={autoFocus}
+      isRequired={isRequired}
       error={error}
       keyboardType="numeric"
       label={label}
       startIcon={startIcon}
       maxLength={10}
-      onChange={handleChange}
+      onChange={onChange}
       placeholder={placeholder}
       endIcon={endIcon}
-      value={value?.toFixed(0)}
+      value={value}
     />
   );
 };

@@ -3,7 +3,7 @@ import { i18nKeys } from '@i18n';
 import { useRecipeStore } from '@providers';
 import { Routes, SearchParamList } from '@types';
 import { getPath } from '@utils';
-import { Link, useLocalSearchParams, useRouter } from 'expo-router';
+import { Link, useLocalSearchParams } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 import { XStack } from 'tamagui';
@@ -13,7 +13,6 @@ import { headerStyles } from './header.styles';
 export const ViewRecipeHeaderRight = () => {
   const { t } = useTranslation();
   const { id } = useLocalSearchParams<SearchParamList<Routes.RecipeView>>();
-  const { back } = useRouter();
   const { remove } = useRecipeStore();
 
   if (!id) {
@@ -32,7 +31,6 @@ export const ViewRecipeHeaderRight = () => {
         {
           onPress: () => {
             remove(id);
-            back();
           },
           style: 'destructive',
           text: t(i18nKeys.common.yes),

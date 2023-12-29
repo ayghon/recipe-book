@@ -1,14 +1,15 @@
-export type MeasurementUnit =
-  | 'as-needed'
-  | 'piece'
-  | 'table-spoon'
-  | 'coffee-spoon'
-  | 'tea-spoon'
-  | 'glass'
-  | 'millilitre'
-  | 'litre'
-  | 'gram'
-  | 'kilogram';
+export enum MeasurementUnit {
+  AsNeeded = 'as_needed',
+  Piece = 'piece',
+  TableSpoon = 'table_spoon',
+  CoffeeSpoon = 'coffee_spoon',
+  TeaSpoon = 'tea_spoon',
+  Glass = 'glass',
+  Millilitre = 'millilitre',
+  Litre = 'litre',
+  Gram = 'gram',
+  Kilogram = 'kilogram',
+}
 
 export type IngredientSection = {
   title?: string;
@@ -17,7 +18,6 @@ export type IngredientSection = {
 
 export type Ingredient = {
   name: string;
-  count?: number;
   countStart?: number;
   countEnd?: number;
   measureUnit: MeasurementUnit;
@@ -27,7 +27,6 @@ export type Ingredient = {
 
 export type Step = {
   explanation: string;
-  title?: string;
   image?: string;
 };
 

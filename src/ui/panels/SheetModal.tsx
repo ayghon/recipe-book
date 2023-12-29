@@ -25,7 +25,7 @@ export const SheetModal: FC<PropsWithChildren<SheetModalProps>> = ({
       zIndex={100_000}
       animation="medium"
     >
-      <Sheet.Overlay animation="lazy" enterStyle={{ opacity: 0 }} exitStyle={{ opacity: 0 }} />
+      <Sheet.Overlay />
       <Sheet.Handle />
       <Sheet.Frame paddingBottom={bottom + 16} paddingTop="$4" paddingHorizontal="$4">
         {children}

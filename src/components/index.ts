@@ -1,2 +1,2 @@
 export * from './headers';
-export * from './RecipeForm';
+export * from './recipe';

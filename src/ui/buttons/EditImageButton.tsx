@@ -33,7 +33,7 @@ export const EditImageButton: FC<EditImageButtonProps> = ({ onPress, sourceUri }
     >
       <View width={100} height={100} backgroundColor={theme.gray8.val} borderRadius={5}>
         <View alignItems="center" flex={1} justifyContent="center">
-          <MaterialIcons name="edit" size={32} color={theme.gray12.val} />
+          <MaterialIcons name="edit" size={32} />
         </View>
       </View>
     </Pressable>
