@@ -3,7 +3,6 @@ import { useController } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { SelectInput, SelectItem } from './SelectInput';
-import { validationError } from '../fields.utils';
 
 type SelectFieldProps = {
   name: string;
@@ -26,9 +25,6 @@ export const SelectField: FC<SelectFieldProps> = ({
     fieldState,
   } = useController({
     name,
-    rules: {
-      required: isRequired && t(validationError.required),
-    },
   });
 
   return (

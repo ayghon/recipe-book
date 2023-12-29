@@ -1,9 +1,7 @@
 import { FC, ReactNode } from 'react';
 import { useController } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 
 import { TextInput } from './TextInput';
-import { validationError } from '../fields.utils';
 
 type TextFieldProps = {
   name: string;
@@ -22,16 +20,11 @@ export const TextField: FC<TextFieldProps> = ({
   autoFocus,
   isRequired = false,
 }) => {
-  const { t } = useTranslation();
-
   const {
     field: { ref, ...field },
     fieldState,
   } = useController({
     name,
-    rules: {
-      required: isRequired && t(validationError.required),
-    },
   });
 
   return (

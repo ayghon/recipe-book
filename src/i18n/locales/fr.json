@@ -6,7 +6,6 @@
   "recipe.edit.header.title": "Modifier une recette",
   "settings.header.title": "Paramètres",
   "settings.language.label": "Langue",
-  "ui.fields.validation.required.message": "Champ obligatoire",
   "components.recipe_form.input.placeholder": "Titre",
   "components.recipe_form.button.add": "Créer la recette",
   "components.recipe_form.button.modify": "Modifier",

@@ -3,7 +3,6 @@ import { useController } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { NumberInput } from './NumberInput';
-import { validationError } from '../fields.utils';
 
 type NumberFieldProps = {
   name: string;
@@ -19,9 +18,6 @@ export const NumberField: FC<NumberFieldProps> = ({ name, placeholder, label, is
     fieldState,
   } = useController({
     name,
-    rules: {
-      required: isRequired && t(validationError.required),
-    },
   });
 
   return (

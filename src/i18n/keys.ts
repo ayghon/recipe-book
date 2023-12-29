@@ -147,13 +147,4 @@ export const i18nKeys = {
       label: 'settings.language.label',
     },
   },
-  ui: {
-    fields: {
-      validation: {
-        required: {
-          message: 'ui.fields.validation.required.message',
-        },
-      },
-    },
-  },
 };

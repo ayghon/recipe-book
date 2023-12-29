@@ -3,7 +3,6 @@ import { useController } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 
 import { TextAreaInput } from './TextAreaInput';
-import { validationError } from '../fields.utils';
 
 type TextAreaFieldProps = {
   name: string;
@@ -27,9 +26,6 @@ export const TextAreaField: FC<TextAreaFieldProps> = ({
     fieldState,
   } = useController({
     name,
-    rules: {
-      required: isRequired && t(validationError.required),
-    },
   });
 
   return (
