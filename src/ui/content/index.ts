@@ -1,2 +1,2 @@
 export * from './RecipeCard';
-export * from './StepItem';
+export * from './Dot';

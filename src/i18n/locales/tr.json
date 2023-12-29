@@ -50,5 +50,6 @@
   "recipe.view.alert.delete.title": "Silmeyi onayla",
   "settings.header.title": "Ayarlar",
   "settings.language.label": "Dil",
-  "language.tr": "Türk"
+  "language.tr": "Türk",
+  "recipe.view.ingredients.optional": "Optional!MISSING!"
 }

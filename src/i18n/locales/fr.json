@@ -50,5 +50,6 @@
   "common.required": "Requis",
   "components.recipe.validation.steps.min": "Au moins une étape doit être incluse",
   "components.recipe.validation.ingredients.min": "Au moins un ingrédient doit être inclus",
-  "language.tr": "Turque"
+  "language.tr": "Turque",
+  "recipe.view.ingredients.optional": "Optional!MISSING!"
 }

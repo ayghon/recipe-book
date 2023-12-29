@@ -137,6 +137,9 @@ export const i18nKeys = {
           title: 'recipe.view.alert.delete.title',
         },
       },
+      ingredients: {
+        optional: 'recipe.view.ingredients.optional',
+      },
     },
   },
   settings: {

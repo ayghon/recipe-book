@@ -49,6 +49,7 @@
   "recipe.edit.header.title": "Edit recipe",
   "recipe.view.alert.delete.description": "Are you sure you want to delete this recipe ?",
   "recipe.view.alert.delete.title": "Confirm delete",
+  "recipe.view.ingredients.optional": "(optional)",
   "settings.header.title": "Settings",
   "settings.language.label": "Language"
 }

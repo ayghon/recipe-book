@@ -1,11 +1,15 @@
+import { RecipeHeader, RecipeIngredients, RecipeSteps } from '@components';
 import { useRecipeStore } from '@providers';
 import { Routes, SearchParamList } from '@types';
 import { ContentContainer } from '@ui';
 import { useLocalSearchParams, useRouter } from 'expo-router';
-import { Image, Paragraph, ScrollView, Text, View, XStack, YStack } from 'tamagui';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import { ScrollView, Separator, useTheme, View } from 'tamagui';
 
 export default function ViewRecipeScreen() {
   const { back, canGoBack } = useRouter();
+  const theme = useTheme();
+  const { bottom } = useSafeAreaInsets();
   const { id } = useLocalSearchParams<SearchParamList<Routes.RecipeView>>();
   const { getById } = useRecipeStore();
 
@@ -23,36 +27,25 @@ export default function ViewRecipeScreen() {
 
   return (
     <ContentContainer>
-      <ScrollView>
-        <YStack rowGap="$4">
-          <Text>{title}</Text>
-          {image && <Image source={{ height: 80, uri: image, width: 80 }} />}
-          <Text fontSize={16}>Ingredients:</Text>
-          {ingredients.map((ingredient, index) => (
-            <YStack key={ingredient.title ?? index}>
-              <Text>{ingredient.title}</Text>
-              {ingredient.items.map((item) => (
-                <View key={item.name} rowGap="$2">
-                  <XStack columnGap="$4">
-                    <Text>
-                      {!item.countEnd ? item.countStart : `${item.countStart}-${item.countEnd}`}
-                    </Text>
-                    <Text>{item.measureUnit}</Text>
-                    <Text>{item.name}</Text>
-                  </XStack>
-                  <Text>Optional: {item.isOptional ? 'yes' : 'no'}</Text>
-                  <Paragraph>{item.comment}</Paragraph>
-                </View>
-              ))}
-            </YStack>
-          ))}
-          {steps.map((step, index) => (
-            <XStack key={step.explanation} columnGap="$4">
-              <Text>{index + 1}.</Text>
-              <Text>{step.explanation}</Text>
-            </XStack>
-          ))}
-        </YStack>
+      <ScrollView
+        marginBottom={bottom}
+        showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+      >
+        <View rowGap="$4">
+          {/* HEADER */}
+          <RecipeHeader title={title} image={image} />
+
+          <Separator borderColor={theme.gray8.val} />
+
+          {/* INGREDIENTS */}
+          <RecipeIngredients ingredients={ingredients} />
+
+          <Separator borderColor={theme.gray8.val} />
+
+          {/* STEPS */}
+          <RecipeSteps steps={steps} />
+        </View>
       </ScrollView>
     </ContentContainer>
   );
