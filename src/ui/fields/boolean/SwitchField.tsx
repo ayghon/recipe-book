@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { useController } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 
 import { SwitchInput } from './SwitchInput';
 
@@ -11,7 +10,6 @@ type SwitchFieldProps = {
 };
 
 export const SwitchField: FC<SwitchFieldProps> = ({ name, isRequired, label }) => {
-  const { t } = useTranslation();
   const {
     field: { ref, ...field },
   } = useController({

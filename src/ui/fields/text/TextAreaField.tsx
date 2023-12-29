@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { useController } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 
 import { TextAreaInput } from './TextAreaInput';
 
@@ -19,8 +18,6 @@ export const TextAreaField: FC<TextAreaFieldProps> = ({
   autoFocus,
   isRequired = false,
 }) => {
-  const { t } = useTranslation();
-
   const {
     field: { ref, ...field },
     fieldState,

@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import { useController } from 'react-hook-form';
-import { useTranslation } from 'react-i18next';
 
 import { NumberInput } from './NumberInput';
 
@@ -12,7 +11,6 @@ type NumberFieldProps = {
 };
 
 export const NumberField: FC<NumberFieldProps> = ({ name, placeholder, label, isRequired }) => {
-  const { t } = useTranslation();
   const {
     field: { ref, ...field },
     fieldState,
