@@ -50,5 +50,6 @@
   "components.recipe_form.ingredients_section.ingredients.input.name.placeholder": "Nom de l'ingrédient",
   "common.required": "Requis",
   "components.recipe.validation.steps.min": "Au moins une étape doit être incluse",
-  "components.recipe.validation.ingredients.min": "Au moins un ingrédient doit être inclus"
+  "components.recipe.validation.ingredients.min": "Au moins un ingrédient doit être inclus",
+  "language.tr": "Turque"
 }

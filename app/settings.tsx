@@ -27,20 +27,16 @@ export default function SettingsScreen() {
       {/* CHANGE LANGUAGE */}
       <SheetModal isOpen={isLanguageModalOpen} setIsOpen={setIsLanguageModalOpen}>
         <View justifyContent="center" alignItems="center" rowGap={32}>
-          <Text
-            color={language === Language.En ? theme.blue8.val : undefined}
-            fontSize={16}
-            onPress={() => handleLanguagePress(Language.En)}
-          >
-            {t(i18nKeys.language.en)}
-          </Text>
-          <Text
-            color={language === Language.Fr ? theme.blue8.val : undefined}
-            fontSize={16}
-            onPress={() => handleLanguagePress(Language.Fr)}
-          >
-            {t(i18nKeys.language.fr)}
-          </Text>
+          {Object.values(Language).map((lang) => (
+            <Text
+              key={lang}
+              color={language === lang ? theme.blue8.val : undefined}
+              fontSize={16}
+              onPress={() => handleLanguagePress(lang)}
+            >
+              {t(i18nKeys.language[lang])}
+            </Text>
+          ))}
         </View>
       </SheetModal>
     </ContentContainer>

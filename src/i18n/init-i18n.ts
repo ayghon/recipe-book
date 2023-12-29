@@ -7,7 +7,7 @@ import { initReactI18next } from 'react-i18next';
 
 import { DEFAULT_LANGUAGE } from './i18n.constants';
 import { Language } from './i18n.types';
-import { en, fr } from './locales';
+import { en, fr, tr } from './locales';
 
 export const useInitI18n = (enabled = true) => {
   const [isLoading, setLoading] = useState(enabled);
@@ -36,6 +36,7 @@ export const useInitI18n = (enabled = true) => {
           resources: {
             en: { translation: en },
             fr: { translation: fr },
+            tr: { translation: tr },
           },
           returnNull: false,
         });

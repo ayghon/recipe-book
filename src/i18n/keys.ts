@@ -111,6 +111,7 @@ export const i18nKeys = {
   language: {
     en: 'language.en',
     fr: 'language.fr',
+    tr: 'language.tr',
   },
   recipe: {
     create: {
