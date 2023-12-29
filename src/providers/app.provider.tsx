@@ -10,7 +10,6 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
   const { isLoading } = useInitI18n();
 
   if (isLoading) {
-    // TODO show SplashScreen
     return null;
   }
 

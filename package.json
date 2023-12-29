@@ -1,13 +1,13 @@
 {
-  "name": "thingsnstuff",
+  "name": "recipe-book",
   "version": "1.0.0",
   "main": "expo-router/entry",
   "scripts": {
-    "android": "expo start --android",
+    "android": "expo run:android",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "gen:i18n": "./src/i18n/utils/generate-i18n-keys.ts",
-    "ios": "expo start --ios",
+    "ios": "expo run:ios",
     "lint": "eslint . --fix",
     "lint:check": "eslint .",
     "prebuild": "expo prebuild",
@@ -46,7 +46,9 @@
     "tamagui": "^1.79.17",
     "tamagui-loader": "^1.79.17",
     "yup": "^1.3.3",
-    "zustand": "^4.4.7"
+    "zustand": "^4.4.7",
+    "expo-splash-screen": "~0.20.5",
+    "expo-system-ui": "~2.4.0"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

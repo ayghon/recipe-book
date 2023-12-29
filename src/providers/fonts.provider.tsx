@@ -2,8 +2,6 @@ import { useFonts } from 'expo-font';
 import { FC, PropsWithChildren } from 'react';
 import { Spinner, XStack } from 'tamagui';
 
-// TODO Move to parent and show SplashScreen while loading
-
 export const FontsProvider: FC<PropsWithChildren> = ({ children }) => {
   const [loaded] = useFonts({
     Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
