@@ -46603,6 +46603,13 @@
           "name": "color-193",
           "val": "#009688",
           "variable": ""
+        },
+        "primaryLight": {
+          "isVar": true,
+          "key": "$primaryLight",
+          "name": "color-194",
+          "val": "#00c9b1",
+          "variable": ""
         }
       },
       "radius": {
@@ -48830,6 +48837,13 @@
         "key": "$primary",
         "name": "color-193",
         "val": "#009688",
+        "variable": ""
+      },
+      "$color.primaryLight": {
+        "isVar": true,
+        "key": "$primaryLight",
+        "name": "color-194",
+        "val": "#00c9b1",
         "variable": ""
       },
       "$radius.0": {

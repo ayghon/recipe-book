@@ -10,4 +10,3 @@ Built with:
 - [Expo](https://expo.dev/)
 - [Tamagui](https://tamagui.dev/)
 - [Zustand](https://zustand-demo.pmnd.rs/)
-  
