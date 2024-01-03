@@ -12,7 +12,7 @@ export const RootStackHeaderRight = () => {
         <MaterialIcons style={headerStyles.icon} name="add" size={24} />
       </Link>
       <Link asChild href={Routes.Settings}>
-        <MaterialIcons style={headerStyles.icon} name="more-vert" size={24} />
+        <MaterialIcons style={headerStyles.icon} name="settings" size={24} />
       </Link>
     </XStack>
   );
