@@ -22,7 +22,7 @@ export const useRecipeStore = create<RecipeState>()(
       add: (recipeFormValues) =>
         set((state) => {
           const uniqueId = Crypto.randomUUID();
-          const recipe: Recipe = { id: uniqueId, ingredients: [], steps: [], ...recipeFormValues };
+          const recipe: Recipe = { id: uniqueId, ...recipeFormValues };
 
           return {
             recipes: [...state.recipes, recipe],
