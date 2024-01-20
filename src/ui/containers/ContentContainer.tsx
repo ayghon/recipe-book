@@ -13,5 +13,9 @@ export const ContentContainer: FC<ContentContainerProps> = ({ children, header }
     );
   }
 
-  return <View margin="$4">{children}</View>;
+  return (
+    <View margin="$4" flex={1}>
+      {children}
+    </View>
+  );
 };
