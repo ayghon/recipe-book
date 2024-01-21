@@ -47117,18 +47117,53 @@
           "val": "hsl(53, 100%, 91.0%)",
           "variable": ""
         },
+        "background": {
+          "isVar": true,
+          "key": "$background",
+          "name": "color-193",
+          "val": "#EEEEEE",
+          "variable": ""
+        },
+        "border": {
+          "isVar": true,
+          "key": "$border",
+          "name": "color-194",
+          "val": "#262626",
+          "variable": ""
+        },
+        "card": {
+          "isVar": true,
+          "key": "$card",
+          "name": "color-195",
+          "val": "#171717",
+          "variable": ""
+        },
         "primary": {
           "isVar": true,
           "key": "$primary",
-          "name": "color-193",
+          "name": "color-196",
           "val": "#009688",
           "variable": ""
         },
         "primaryLight": {
           "isVar": true,
           "key": "$primaryLight",
-          "name": "color-194",
+          "name": "color-197",
           "val": "#00c9b1",
+          "variable": ""
+        },
+        "textDark": {
+          "isVar": true,
+          "key": "$textDark",
+          "name": "color-198",
+          "val": "#EDEDED",
+          "variable": ""
+        },
+        "textLight": {
+          "isVar": true,
+          "key": "$textLight",
+          "name": "color-199",
+          "val": "#171717",
           "variable": ""
         }
       },
@@ -49352,18 +49387,53 @@
         "val": "hsl(53, 100%, 91.0%)",
         "variable": ""
       },
+      "$color.background": {
+        "isVar": true,
+        "key": "$background",
+        "name": "color-193",
+        "val": "#EEEEEE",
+        "variable": ""
+      },
+      "$color.border": {
+        "isVar": true,
+        "key": "$border",
+        "name": "color-194",
+        "val": "#262626",
+        "variable": ""
+      },
+      "$color.card": {
+        "isVar": true,
+        "key": "$card",
+        "name": "color-195",
+        "val": "#171717",
+        "variable": ""
+      },
       "$color.primary": {
         "isVar": true,
         "key": "$primary",
-        "name": "color-193",
+        "name": "color-196",
         "val": "#009688",
         "variable": ""
       },
       "$color.primaryLight": {
         "isVar": true,
         "key": "$primaryLight",
-        "name": "color-194",
+        "name": "color-197",
         "val": "#00c9b1",
+        "variable": ""
+      },
+      "$color.textDark": {
+        "isVar": true,
+        "key": "$textDark",
+        "name": "color-198",
+        "val": "#EDEDED",
+        "variable": ""
+      },
+      "$color.textLight": {
+        "isVar": true,
+        "key": "$textLight",
+        "name": "color-199",
+        "val": "#171717",
         "variable": ""
       },
       "$radius.0": {
