@@ -1,9 +1,11 @@
-import { ViewRecipeHeaderRight, HomeHeader } from '@components';
+import { ViewRecipeHeaderRight } from '@components';
 import { i18nKeys } from '@i18n';
 import { AppProvider } from '@providers';
 import { Routes } from '@types';
 import { Stack } from 'expo-router';
 import { useTranslation } from 'react-i18next';
+
+import { RootStackHeaderRight } from '../src/components/headers/RootStackHeaderRight';
 
 export default function RootLayout() {
   return (
@@ -17,12 +19,16 @@ const RootStack = () => {
   const { t } = useTranslation();
 
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        animation: 'slide_from_right',
+      }}
+    >
       <Stack.Screen
         name={Routes.Home}
         options={{
-          header: HomeHeader,
-          title: t(i18nKeys.home.header.title),
+          headerRight: RootStackHeaderRight,
+          title: '',
         }}
       />
       <Stack.Screen

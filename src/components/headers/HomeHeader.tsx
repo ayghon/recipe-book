@@ -13,7 +13,7 @@ export const HomeHeader = (props: NativeStackHeaderProps) => {
   const { width } = useWindowDimensions();
 
   return (
-    <XStack alignItems="center" height={40} marginTop={top}>
+    <XStack backgroundColor="$card" alignItems="center" height={40} marginTop={top}>
       <View width={width / 3} />
       <View width={width / 3} alignItems="center">
         <HeaderTitle>{title}</HeaderTitle>

@@ -50,7 +50,7 @@ export const NumberInput: FC<NumberInputProps> = ({
       onChange={onChange}
       placeholder={placeholder}
       endIcon={endIcon}
-      value={value}
+      value={value?.toString()}
     />
   );
 };

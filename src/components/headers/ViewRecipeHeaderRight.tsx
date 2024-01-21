@@ -6,7 +6,7 @@ import { getPath } from '@utils';
 import { Link, useLocalSearchParams } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
-import { XStack } from 'tamagui';
+import { getTokens, XStack } from 'tamagui';
 
 import { headerStyles } from './header.styles';
 
@@ -42,9 +42,20 @@ export const ViewRecipeHeaderRight = () => {
   return (
     <XStack columnGap="$2" marginEnd="$2">
       <Link asChild href={getPath(Routes.RecipeEdit, { id })}>
-        <MaterialIcons style={headerStyles.icon} name="edit" size={24} />
+        <MaterialIcons
+          color={getTokens().color.textDark.val}
+          style={headerStyles.icon}
+          name="edit"
+          size={24}
+        />
       </Link>
-      <MaterialIcons style={headerStyles.icon} onPress={onDeletePress} name="delete" size={24} />
+      <MaterialIcons
+        color={getTokens().color.textDark.val}
+        style={headerStyles.icon}
+        onPress={onDeletePress}
+        name="delete"
+        size={24}
+      />
     </XStack>
   );
 };

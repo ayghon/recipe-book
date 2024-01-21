@@ -11,7 +11,11 @@ const theme: Theme = {
   ...DefaultTheme,
   colors: {
     ...DefaultTheme.colors,
+    background: getTokens().color.background.val,
+    border: getTokens().color.border.val,
+    card: getTokens().color.card.val,
     primary: getTokens().color.primary.val,
+    text: getTokens().color.textDark.val,
   },
 };
 
@@ -26,7 +30,7 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
     <TamaguiProvider config={config}>
       <FontsProvider>
         <ThemeProvider value={theme}>
-          <StatusBar style="auto" />
+          <StatusBar style="light" />
           {children}
         </ThemeProvider>
       </FontsProvider>
