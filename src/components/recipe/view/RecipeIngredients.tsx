@@ -1,5 +1,5 @@
 import { i18nKeys } from '@i18n';
-import { IngredientSection } from '@types';
+import { IngredientSection, MeasurementUnit } from '@types';
 import { Dot } from '@ui';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -28,24 +28,37 @@ export const RecipeIngredients: FC<RecipeIngredientsProps> = ({ ingredients }) =
             )}
 
             <View rowGap="$2">
-              {ingredient.items.map((item) => (
-                <View key={item.name}>
-                  <XStack alignItems="center" columnGap="$2">
-                    <Dot />
-                    <Text fontSize={16}>
-                      {!item.countEnd ? item.countStart : `${item.countStart}-${item.countEnd}`}
-                    </Text>
-                    <Text fontSize={16}>{t(i18nKeys.common.measure_unit[item.measureUnit])}</Text>
-                    <Text fontSize={16}>{item.name}</Text>
-                    {item.isOptional && (
-                      <Text fontSize={16} color={theme.gray11.val}>
-                        {t(i18nKeys.recipe.view.ingredients.optional)}
-                      </Text>
-                    )}
-                  </XStack>
-                  <Paragraph fontSize={14}>{item.comment}</Paragraph>
-                </View>
-              ))}
+              {ingredient.items.map((item) => {
+                const isAsNeeded = item.measureUnit === MeasurementUnit.AsNeeded;
+
+                return (
+                  <View key={item.name}>
+                    <XStack alignItems="center" columnGap="$2">
+                      <Dot />
+                      {!isAsNeeded && (
+                        <Text fontSize={16}>
+                          {!item.countEnd ? item.countStart : `${item.countStart}-${item.countEnd}`}
+                        </Text>
+                      )}
+                      {!isAsNeeded && (
+                        <Text fontSize={16}>
+                          {t(i18nKeys.common.measure_unit[item.measureUnit])}
+                        </Text>
+                      )}
+                      <Text fontSize={16}>{item.name}</Text>
+                      {isAsNeeded && (
+                        <Text fontSize={16}>{t(i18nKeys.common.measure_unit.as_needed)}</Text>
+                      )}
+                      {item.isOptional && (
+                        <Text fontSize={16} color={theme.gray11.val}>
+                          {t(i18nKeys.recipe.view.ingredients.optional)}
+                        </Text>
+                      )}
+                    </XStack>
+                    <Paragraph fontSize={14}>{item.comment}</Paragraph>
+                  </View>
+                );
+              })}
             </View>
           </View>
         ))}
