@@ -1,7 +1,9 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import { FC } from 'react';
 import { Pressable } from 'react-native';
-import { Image, useTheme, View } from 'tamagui';
+import { useTheme, View } from 'tamagui';
+
+import { Image } from '../content';
 
 type EditImageButtonProps = {
   onPress: () => void;
@@ -19,7 +21,7 @@ export const EditImageButton: FC<EditImageButtonProps> = ({ onPress, sourceUri }
           opacity: pressed ? 0.8 : undefined,
         })}
       >
-        <Image height={100} width={100} resizeMode="cover" source={{ uri: sourceUri }} />
+        <Image rounded height={100} width={100} source={sourceUri} />
       </Pressable>
     );
   }

@@ -1,5 +1,7 @@
 import { FC } from 'react';
-import { Card, CardProps, Image, Text, useTheme, View } from 'tamagui';
+import { Card, CardProps, Text, useTheme, View } from 'tamagui';
+
+import { Image } from './Image';
 
 type RecipeCardProps = { image?: string; title: string; onPress: () => void } & CardProps;
 
@@ -19,17 +21,15 @@ export const RecipeCard: FC<RecipeCardProps> = ({ image, title, onPress, ...rest
     >
       <Card.Background>
         {image ? (
-          <Image
-            backgroundColor={theme.color8.val}
-            width="100%"
-            height={300}
-            borderRadius="$2"
-            source={{
-              uri: image,
-            }}
-            alignSelf="center"
-            resizeMode="cover"
-          />
+          <View width="100%" alignSelf="center">
+            <Image
+              backgroundColor={theme.color8.val}
+              width="100%"
+              height={300}
+              rounded
+              source={image}
+            />
+          </View>
         ) : (
           <View height={300} width="100%" borderRadius="$2" backgroundColor={theme.color8.val} />
         )}

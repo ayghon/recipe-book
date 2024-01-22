@@ -50,7 +50,8 @@
     "tamagui": "^1.84.1",
     "tamagui-loader": "^1.84.1",
     "yup": "^1.3.3",
-    "zustand": "^4.4.7"
+    "zustand": "^4.4.7",
+    "expo-image": "~1.10.4"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
