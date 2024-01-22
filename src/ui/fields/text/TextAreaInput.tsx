@@ -34,7 +34,7 @@ export const TextAreaInput: FC<TextAreaInputProps> = ({
       <TextArea
         size="$4"
         borderWidth={2}
-        borderRadius="$2"
+        borderRadius={5}
         ref={inputRef}
         selectionColor="grey"
         onChangeText={onChange}

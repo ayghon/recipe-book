@@ -16,7 +16,7 @@ export const ListItemButton: FC<ListItemButtonProps> = ({ onPress, children, end
   return (
     <PressableOpacity onPress={onPress}>
       <XStack
-        borderRadius="$2"
+        borderRadius={5}
         paddingVertical="$4.5"
         paddingHorizontal="$3.5"
         justifyContent="space-between"

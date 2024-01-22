@@ -53,7 +53,7 @@ export const SelectInput: FC<SelectInputProps> = ({
         )}
         <Select.Trigger
           borderColor={theme.gray10.val}
-          borderRadius="$2"
+          borderRadius={5}
           iconAfter={<MaterialIcons name="keyboard-arrow-down" size={24} />}
           ref={inputRef}
           {...rest}
