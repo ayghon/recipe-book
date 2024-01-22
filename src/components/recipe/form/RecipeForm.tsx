@@ -66,7 +66,7 @@ export const RecipeForm: FC<RecipeFormProps> = ({ data, onSubmit }) => {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
         >
-          <YStack rowGap="$4">
+          <YStack rowGap={16}>
             <YStack alignItems="center">
               <EditImageButton sourceUri={image} onPress={onEditImagePress} />
             </YStack>
@@ -78,7 +78,7 @@ export const RecipeForm: FC<RecipeFormProps> = ({ data, onSubmit }) => {
               placeholder={t(i18nKeys.components.recipe_form.input.placeholder)}
             />
 
-            <View rowGap="$8">
+            <View rowGap={32}>
               {/* INGREDIENTS SECTION */}
               <RecipeIngredientSectionSection />
 

@@ -40,7 +40,7 @@ export const ViewRecipeHeaderRight = () => {
   };
 
   return (
-    <XStack columnGap="$2" marginEnd="$2">
+    <XStack columnGap={4}>
       <Link asChild href={getPath(Routes.RecipeEdit, { id })}>
         <MaterialIcons
           color={getTokens().color.textDark.val}

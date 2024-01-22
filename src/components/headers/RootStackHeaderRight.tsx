@@ -7,7 +7,7 @@ import { headerStyles } from './header.styles';
 
 export const RootStackHeaderRight = () => {
   return (
-    <XStack columnGap="$2">
+    <XStack columnGap={8}>
       <Link asChild href={Routes.RecipeCreate}>
         <MaterialIcons
           color={getTokens().color.textDark.val}

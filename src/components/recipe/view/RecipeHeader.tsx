@@ -11,7 +11,7 @@ export const RecipeHeader: FC<RecipeHeaderProps> = ({ image, title }) => {
   const { height } = useWindowDimensions();
 
   return (
-    <View rowGap="$4">
+    <View rowGap={16}>
       {image && <Image rounded width="auto" height={height / 5} source={image} />}
       <Text fontSize={18} textAlign="center" fontWeight="800">
         {title}

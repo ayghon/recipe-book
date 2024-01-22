@@ -14,7 +14,7 @@ export const RecipeIngredients: FC<RecipeIngredientsProps> = ({ ingredients }) =
   const { t } = useTranslation();
 
   return (
-    <View rowGap="$4">
+    <View rowGap={16}>
       <Text fontSize={16} fontWeight="800">
         {t(i18nKeys.components.recipe_form.ingredients_section.title)}
       </Text>
@@ -22,18 +22,18 @@ export const RecipeIngredients: FC<RecipeIngredientsProps> = ({ ingredients }) =
         {ingredients.map((ingredient, index) => (
           <View key={ingredient.title ?? `${ingredient.items.length}-${index}`}>
             {ingredient.title && (
-              <Text fontSize={16} fontWeight="800" marginVertical="$4">
+              <Text fontSize={16} fontWeight="800" marginVertical={16}>
                 {ingredient.title}
               </Text>
             )}
 
-            <View rowGap="$2">
+            <View rowGap={8}>
               {ingredient.items.map((item) => {
                 const isAsNeeded = item.measureUnit === MeasurementUnit.AsNeeded;
 
                 return (
                   <View key={item.name}>
-                    <XStack alignItems="center" columnGap="$2">
+                    <XStack alignItems="center" columnGap={8}>
                       <Dot />
                       {!isAsNeeded && (
                         <Text fontSize={16}>

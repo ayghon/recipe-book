@@ -6,7 +6,7 @@ type ContentContainerProps = PropsWithChildren<{ header?: ReactNode }>;
 export const ContentContainer: FC<ContentContainerProps> = ({ children, header }) => {
   if (header) {
     return (
-      <YStack marginHorizontal="$4" rowGap="$4">
+      <YStack marginHorizontal={16} rowGap={16}>
         {header}
         {children}
       </YStack>
@@ -14,7 +14,7 @@ export const ContentContainer: FC<ContentContainerProps> = ({ children, header }
   }
 
   return (
-    <View margin="$4" flex={1}>
+    <View margin={16} flex={1}>
       {children}
     </View>
   );

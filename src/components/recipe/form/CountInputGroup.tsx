@@ -21,7 +21,7 @@ export const CountInputGroup: FC<CountInputGroupProps> = ({ itemIndex, index }) 
   }
 
   return (
-    <XStack columnGap="$2">
+    <XStack columnGap={8}>
       <NumberField
         label={t(
           i18nKeys.components.recipe_form.ingredients_section.ingredients.input.count_start.label,

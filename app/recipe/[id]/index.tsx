@@ -32,7 +32,7 @@ export default function ViewRecipeScreen() {
         showsVerticalScrollIndicator={false}
         showsHorizontalScrollIndicator={false}
       >
-        <View rowGap="$4">
+        <View rowGap={16}>
           {/* HEADER */}
           <RecipeHeader title={title} image={image} />
 

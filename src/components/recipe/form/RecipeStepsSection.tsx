@@ -60,15 +60,15 @@ export const RecipeStepsSection = () => {
   };
 
   return (
-    <View rowGap="$4">
+    <View rowGap={16}>
       <Text fontWeight="800" fontSize={20}>
         {t(i18nKeys.components.recipe_form.steps_section.title)}
       </Text>
       {fields.map(({ id }, index) => (
-        <XStack key={id} width="100%" columnGap="$2">
+        <XStack key={id} width="100%" columnGap={8}>
           <Text fontSize={16}>{index + 1}.</Text>
           <TextAreaField name={`steps.${index}.explanation`} isRequired />
-          <YStack rowGap="$2.5">
+          <YStack rowGap={10}>
             <MaterialIcons
               name="arrow-upward"
               size={24}

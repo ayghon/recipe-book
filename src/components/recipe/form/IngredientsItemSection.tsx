@@ -28,14 +28,8 @@ export const IngredientsItemSection: FC<IngredientsItemSectionProps> = ({
   const sectionError = errors.ingredients?.[index]?.items?.message;
 
   return (
-    <View
-      key={id}
-      borderWidth={1}
-      borderColor={theme.gray8.val}
-      paddingVertical="$3"
-      paddingHorizontal="$4"
-    >
-      <XStack width="100%" columnGap="$2">
+    <View key={id} borderWidth={1} borderColor={theme.gray8.val} padding={16}>
+      <XStack width="100%" columnGap={8}>
         <TextField
           label={t(i18nKeys.components.recipe_form.ingredients_section.input.title.label)}
           placeholder={t(

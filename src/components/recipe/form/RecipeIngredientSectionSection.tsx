@@ -47,7 +47,7 @@ export const RecipeIngredientSectionSection = () => {
   };
 
   return (
-    <View rowGap="$4">
+    <View rowGap={16}>
       <Text fontWeight="800" fontSize={20}>
         {t(i18nKeys.components.recipe_form.ingredients_section.title)}
       </Text>

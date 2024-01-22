@@ -56,11 +56,11 @@ export const IngredientsSection: FC<IngredientSectionProps> = ({ index }) => {
   };
 
   return (
-    <View rowGap="$4">
-      <View rowGap="$3">
+    <View rowGap={16}>
+      <View rowGap={12}>
         {fields.map(({ id }, itemIndex) => (
-          <YStack columnGap="$4" rowGap="$4" key={id}>
-            <XStack flex={1} columnGap="$2">
+          <YStack columnGap={16} rowGap={16} key={id}>
+            <XStack flex={1} columnGap={8}>
               <Text fontSize={16}>{itemIndex + 1}.</Text>
               <TextField
                 label={t(
@@ -109,7 +109,7 @@ export const IngredientsSection: FC<IngredientSectionProps> = ({ index }) => {
               )}
               name={`ingredients.${index}.items.${itemIndex}.comment`}
             />
-            <Separator marginBottom="$4" borderColor={theme.gray8.val} />
+            <Separator marginBottom={16} borderColor={theme.gray8.val} />
           </YStack>
         ))}
       </View>

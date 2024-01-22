@@ -88,7 +88,7 @@ export const SelectInput: FC<SelectInputProps> = ({
 
       <Select.Content zIndex={200000}>
         <Select.Viewport minWidth={200}>
-          <Select.Group paddingTop="$4" paddingBottom={bottom}>
+          <Select.Group paddingTop={16} paddingBottom={bottom}>
             {items.map((item, i) => {
               return (
                 <Select.Item key={item.value} index={i} value={item.value}>
