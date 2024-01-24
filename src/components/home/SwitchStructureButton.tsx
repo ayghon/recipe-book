@@ -8,7 +8,7 @@ export const SwitchStructureButton: FC<{
   onChange: (value: string) => void;
 }> = ({ value, onChange }) => {
   return (
-    <ToggleGroup disableDeactivation type="single" value={value} onValueChange={onChange}>
+    <ToggleGroup size="$2" disableDeactivation type="single" value={value} onValueChange={onChange}>
       <ToggleGroup.Item value={StructureType.Card}>
         <MaterialIcons name="view-stream" size={24} color={getTokens().color.textLight.val} />
       </ToggleGroup.Item>

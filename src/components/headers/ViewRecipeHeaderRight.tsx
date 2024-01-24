@@ -43,14 +43,14 @@ export const ViewRecipeHeaderRight = () => {
     <XStack columnGap={4}>
       <Link asChild href={getPath(Routes.RecipeEdit, { id })}>
         <MaterialIcons
-          color={getTokens().color.textDark.val}
+          color={getTokens().color.textLight.val}
           style={headerStyles.icon}
           name="edit"
           size={24}
         />
       </Link>
       <MaterialIcons
-        color={getTokens().color.textDark.val}
+        color={getTokens().color.textLight.val}
         style={headerStyles.icon}
         onPress={onDeletePress}
         name="delete"

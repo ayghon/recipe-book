@@ -4,8 +4,7 @@ import { AppProvider } from '@providers';
 import { Routes } from '@types';
 import { Stack } from 'expo-router';
 import { useTranslation } from 'react-i18next';
-
-import { RootStackHeaderRight } from '../src/components/headers/RootStackHeaderRight';
+import { getTokens } from 'tamagui';
 
 export default function RootLayout() {
   return (
@@ -21,13 +20,14 @@ const RootStack = () => {
   return (
     <Stack
       screenOptions={{
-        animation: 'slide_from_right',
+        headerStyle: { backgroundColor: getTokens().color.background.val },
+        headerTitleStyle: { color: getTokens().color.textLight.val },
       }}
     >
       <Stack.Screen
         name={Routes.Home}
         options={{
-          headerRight: RootStackHeaderRight,
+          headerShown: false,
           title: '',
         }}
       />

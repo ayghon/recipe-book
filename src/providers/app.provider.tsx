@@ -30,7 +30,7 @@ export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
     <TamaguiProvider config={config}>
       <FontsProvider>
         <ThemeProvider value={theme}>
-          <StatusBar style="light" />
+          <StatusBar style="dark" />
           {children}
         </ThemeProvider>
       </FontsProvider>
