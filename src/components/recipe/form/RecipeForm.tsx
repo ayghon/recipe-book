@@ -40,12 +40,7 @@ export const RecipeForm: FC<RecipeFormProps> = ({ data, onSubmit }) => {
     resolver: yupResolver<RecipeFormValues>(validationSchema),
   });
 
-  const onEditImagePress = async () => {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.Images,
-      quality: 1,
-    });
-
+  const onEditImagePress = async (result: ImagePicker.ImagePickerResult) => {
     if (!result.canceled && result.assets[0]) {
       const selectedImage = result.assets[0].uri;
       methods.setValue('image', selectedImage);
