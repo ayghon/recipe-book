@@ -1,18 +1,28 @@
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { MediaTypeOptions, useCameraPermissions } from 'expo-image-picker';
 import * as ImagePicker from 'expo-image-picker';
 import { FC } from 'react';
-import { Pressable } from 'react-native';
-import { getTokens, useTheme, View } from 'tamagui';
+import { Button, getTokens, useTheme, View } from 'tamagui';
 
+import { PressableOpacity } from './PressableOpacity';
 import { Image } from '../content';
+
+export enum EditImageButtonVariant {
+  Full = 'full',
+  Minimal = 'minimal',
+}
 
 type EditImageButtonProps = {
   onPress: (result: ImagePicker.ImagePickerResult) => void;
   sourceUri?: string;
+  variant?: EditImageButtonVariant;
 };
 
-export const EditImageButton: FC<EditImageButtonProps> = ({ onPress, sourceUri }) => {
+export const EditImageButton: FC<EditImageButtonProps> = ({
+  onPress,
+  sourceUri,
+  variant = EditImageButtonVariant.Full,
+}) => {
   const theme = useTheme();
   const [permission, requestPermission] = useCameraPermissions();
 
@@ -58,40 +68,39 @@ export const EditImageButton: FC<EditImageButtonProps> = ({ onPress, sourceUri }
 
   if (sourceUri) {
     return (
-      <Pressable
-        onPress={handlePress}
-        style={({ pressed }) => ({
-          opacity: pressed ? 0.8 : undefined,
-        })}
-      >
+      <PressableOpacity style={{ alignSelf: 'center' }} onPress={handlePress}>
         <View
           position="absolute"
-          right={-25}
-          bottom={-10}
+          right={-10}
+          bottom={-5}
           zIndex={2}
           backgroundColor={getTokens().color.primary.val}
           borderRadius={100}
           padding={8}
         >
-          <MaterialIcons name="edit" size={32} color={getTokens().color.textDark.val} />
+          <MaterialIcons name="edit" size={24} color={getTokens().color.textDark.val} />
         </View>
         <Image rounded height={100} width={100} source={sourceUri} />
-      </Pressable>
+      </PressableOpacity>
+    );
+  }
+
+  if (variant === EditImageButtonVariant.Minimal) {
+    return (
+      <Button bordered={2} size="$3" alignSelf="flex-start" onPress={handlePress}>
+        Choose an image
+        <MaterialCommunityIcons name="image-outline" size={24} />
+      </Button>
     );
   }
 
   return (
-    <Pressable
-      onPress={handlePress}
-      style={({ pressed }) => ({
-        opacity: pressed ? 0.8 : undefined,
-      })}
-    >
+    <PressableOpacity onPress={handlePress}>
       <View width={100} height={100} backgroundColor={theme.gray8.val} borderRadius={5}>
         <View alignItems="center" flex={1} justifyContent="center">
           <MaterialIcons name="edit" size={32} />
         </View>
       </View>
-    </Pressable>
+    </PressableOpacity>
   );
 };
