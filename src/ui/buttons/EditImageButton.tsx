@@ -3,7 +3,7 @@ import { MediaTypeOptions, useCameraPermissions } from 'expo-image-picker';
 import * as ImagePicker from 'expo-image-picker';
 import { FC } from 'react';
 import { Pressable } from 'react-native';
-import { useTheme, View } from 'tamagui';
+import { getTokens, useTheme, View } from 'tamagui';
 
 import { Image } from '../content';
 
@@ -64,6 +64,17 @@ export const EditImageButton: FC<EditImageButtonProps> = ({ onPress, sourceUri }
           opacity: pressed ? 0.8 : undefined,
         })}
       >
+        <View
+          position="absolute"
+          right={-25}
+          bottom={-10}
+          zIndex={2}
+          backgroundColor={getTokens().color.primary.val}
+          borderRadius={100}
+          padding={8}
+        >
+          <MaterialIcons name="edit" size={32} color={getTokens().color.textDark.val} />
+        </View>
         <Image rounded height={100} width={100} source={sourceUri} />
       </Pressable>
     );
