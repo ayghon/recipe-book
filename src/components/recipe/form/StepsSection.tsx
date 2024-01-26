@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 import { Button, Text, useTheme, View, XStack, YStack } from 'tamagui';
 
-export const RecipeStepsSection = () => {
+export const StepsSection = () => {
   const { t } = useTranslation();
   const theme = useTheme();
   const { fields, append, remove, swap } = useFieldArray<{ steps: Step[] }>({

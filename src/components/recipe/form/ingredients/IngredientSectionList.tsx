@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 import { Button, Text, useTheme, View } from 'tamagui';
 
-import { IngredientsItemSection } from './IngredientsItemSection';
+import { IngredientSectionItem } from './IngredientSectionItem';
 
-export const RecipeIngredientSectionSection = () => {
+export const IngredientSectionList = () => {
   const { t } = useTranslation();
   const theme = useTheme();
   const { fields, append, remove } = useFieldArray({ name: 'ingredients' });
@@ -52,7 +52,7 @@ export const RecipeIngredientSectionSection = () => {
         {t(i18nKeys.components.recipe_form.ingredients_section.title)}
       </Text>
       {fields.map(({ id }, index) => (
-        <IngredientsItemSection
+        <IngredientSectionItem
           index={index}
           id={id}
           key={id}

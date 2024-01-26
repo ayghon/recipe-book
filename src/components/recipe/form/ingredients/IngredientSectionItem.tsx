@@ -7,7 +7,7 @@ import { useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Text, useTheme, View, XStack } from 'tamagui';
 
-import { IngredientsSection } from './IngredientsSection';
+import { IngredientFields } from './IngredientFields';
 
 type IngredientsItemSectionProps = {
   id: string;
@@ -15,7 +15,7 @@ type IngredientsItemSectionProps = {
   onDeletePress: () => void;
 };
 
-export const IngredientsItemSection: FC<IngredientsItemSectionProps> = ({
+export const IngredientSectionItem: FC<IngredientsItemSectionProps> = ({
   id,
   onDeletePress,
   index,
@@ -42,7 +42,7 @@ export const IngredientsItemSection: FC<IngredientsItemSectionProps> = ({
       <Text height={18} fontSize={14} color={theme.red9.val}>
         {sectionError}
       </Text>
-      <IngredientsSection index={index} />
+      <IngredientFields index={index} />
     </View>
   );
 };

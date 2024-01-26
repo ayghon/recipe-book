@@ -9,13 +9,13 @@ import { Alert } from 'react-native';
 import { Button, Separator, Text, useTheme, View, XStack, YStack } from 'tamagui';
 
 import { CountInputGroup } from './CountInputGroup';
-import { RecipeFormValues } from './RecipeForm';
+import { RecipeFormValues } from '../RecipeForm';
 
 type IngredientSectionProps = {
   index: number;
 };
 
-export const IngredientsSection: FC<IngredientSectionProps> = ({ index }) => {
+export const IngredientFields: FC<IngredientSectionProps> = ({ index }) => {
   const { t } = useTranslation();
   const theme = useTheme();
   const { watch } = useFormContext<RecipeFormValues>();

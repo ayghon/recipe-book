@@ -11,8 +11,8 @@ import { KeyboardAvoidingView, Platform } from 'react-native';
 import { ScrollView, View, YStack } from 'tamagui';
 
 import { FormFooter } from './FormFooter';
-import { RecipeIngredientSectionSection } from './RecipeIngredientSectionSection';
-import { RecipeStepsSection } from './RecipeStepsSection';
+import { StepsSection } from './StepsSection';
+import { IngredientSectionList } from './ingredients/IngredientSectionList';
 import { useRecipeFormValidationSchema } from './recipe.validation';
 
 export type RecipeFormValues = Omit<Recipe, 'id'>;
@@ -75,10 +75,10 @@ export const RecipeForm: FC<RecipeFormProps> = ({ data, onSubmit }) => {
 
             <View rowGap={32}>
               {/* INGREDIENTS SECTION */}
-              <RecipeIngredientSectionSection />
+              <IngredientSectionList />
 
               {/* STEPS SECTION */}
-              <RecipeStepsSection />
+              <StepsSection />
             </View>
           </YStack>
         </ScrollView>
