@@ -1,3 +1,4 @@
+import { IS_ANDROID } from '@constants';
 import { MaterialIcons } from '@expo/vector-icons';
 import { StructureType, useAppConfigStore } from '@providers';
 import { Routes } from '@types';
@@ -13,7 +14,7 @@ export const HomeHeader = () => {
   const { changeStructureType, homeStructureType } = useAppConfigStore();
 
   return (
-    <XStack paddingHorizontal={16} columnGap={8} paddingTop={top}>
+    <XStack paddingHorizontal={16} columnGap={8} paddingTop={top + (IS_ANDROID ? 12 : 0)}>
       <XStack flex={1}>
         <SwitchStructureButton
           onChange={(value) => changeStructureType(value as StructureType)}
