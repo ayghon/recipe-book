@@ -1,4 +1,4 @@
-import { ViewRecipeHeaderRight } from '@components';
+import { BackButton, ViewRecipeHeaderRight } from '@components';
 import { i18nKeys } from '@i18n';
 import { AppProvider } from '@providers';
 import { Routes } from '@types';
@@ -20,7 +20,10 @@ const RootStack = () => {
   return (
     <Stack
       screenOptions={{
+        headerLeft: BackButton,
         headerStyle: { backgroundColor: getTokens().color.background.val },
+        headerTintColor: getTokens().color.primary.val,
+        headerTitleAlign: 'center',
         headerTitleStyle: { color: getTokens().color.textLight.val },
       }}
     >
