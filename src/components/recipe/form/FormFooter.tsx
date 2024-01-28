@@ -1,6 +1,7 @@
+import { GradientButton } from '@ui';
 import { FC } from 'react';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Button, View } from 'tamagui';
+import { View } from 'tamagui';
 
 type FormFooterProps = {
   onPress: () => void;
@@ -12,9 +13,7 @@ export const FormFooter: FC<FormFooterProps> = ({ onPress, label }) => {
 
   return (
     <View marginTop={16} marginBottom={bottom}>
-      <Button color="white" backgroundColor="$primary" onPress={onPress}>
-        {label}
-      </Button>
+      <GradientButton onPress={onPress}>{label}</GradientButton>
     </View>
   );
 };
