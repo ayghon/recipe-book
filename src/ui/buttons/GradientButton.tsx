@@ -7,7 +7,6 @@ import { GradientContainer } from '../containers';
 export enum GradientButtonVariant {
   Border = 'border',
   Primary = 'default',
-  Secondary = 'secondary',
 }
 
 type GradientButtonProps = {

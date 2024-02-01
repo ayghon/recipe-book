@@ -47145,24 +47145,31 @@
           "val": "#009688",
           "variable": ""
         },
+        "primaryDark": {
+          "isVar": true,
+          "key": "$primaryDark",
+          "name": "color-197",
+          "val": "#00756a",
+          "variable": ""
+        },
         "primaryLight": {
           "isVar": true,
           "key": "$primaryLight",
-          "name": "color-197",
+          "name": "color-198",
           "val": "#00c9b1",
           "variable": ""
         },
         "textDark": {
           "isVar": true,
           "key": "$textDark",
-          "name": "color-198",
+          "name": "color-199",
           "val": "#EDEDED",
           "variable": ""
         },
         "textLight": {
           "isVar": true,
           "key": "$textLight",
-          "name": "color-199",
+          "name": "color-200",
           "val": "#171717",
           "variable": ""
         }
@@ -49415,24 +49422,31 @@
         "val": "#009688",
         "variable": ""
       },
+      "$color.primaryDark": {
+        "isVar": true,
+        "key": "$primaryDark",
+        "name": "color-197",
+        "val": "#00756a",
+        "variable": ""
+      },
       "$color.primaryLight": {
         "isVar": true,
         "key": "$primaryLight",
-        "name": "color-197",
+        "name": "color-198",
         "val": "#00c9b1",
         "variable": ""
       },
       "$color.textDark": {
         "isVar": true,
         "key": "$textDark",
-        "name": "color-198",
+        "name": "color-199",
         "val": "#EDEDED",
         "variable": ""
       },
       "$color.textLight": {
         "isVar": true,
         "key": "$textLight",
-        "name": "color-199",
+        "name": "color-200",
         "val": "#171717",
         "variable": ""
       },
