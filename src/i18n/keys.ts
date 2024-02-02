@@ -36,13 +36,6 @@ export const i18nKeys = {
         modify: 'components.recipe_form.button.modify',
       },
       ingredients_section: {
-        alert: {
-          delete: {
-            description: 'components.recipe_form.ingredients_section.alert.delete.description',
-            title: 'components.recipe_form.ingredients_section.alert.delete.title',
-          },
-        },
-        button: 'components.recipe_form.ingredients_section.button',
         ingredients: {
           alert: {
             delete: {
@@ -82,7 +75,6 @@ export const i18nKeys = {
         },
         input: {
           title: {
-            label: 'components.recipe_form.ingredients_section.input.title.label',
             placeholder: 'components.recipe_form.ingredients_section.input.title.placeholder',
           },
         },

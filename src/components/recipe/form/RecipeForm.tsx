@@ -8,12 +8,12 @@ import { FC, useState } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { KeyboardAvoidingView, Platform } from 'react-native';
-import { ScrollView, View, YStack } from 'tamagui';
+import { ScrollView, View } from 'tamagui';
 
 import { FormFooter } from './FormFooter';
-import { StepsSection } from './StepsSection';
-import { IngredientSectionList } from './ingredients/IngredientSectionList';
+import { IngredientsSection } from './ingredients/IngredientsSection';
 import { useRecipeFormValidationSchema } from './recipe.validation';
+import { StepsSection } from './steps/StepsSection';
 
 export type RecipeFormValues = Omit<Recipe, 'id'>;
 
@@ -61,10 +61,10 @@ export const RecipeForm: FC<RecipeFormProps> = ({ data, onSubmit }) => {
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
         >
-          <YStack rowGap={16}>
-            <YStack alignItems="center">
+          <View rowGap={16}>
+            <View alignItems="center">
               <EditImageButton sourceUri={image} onPress={onEditImagePress} />
-            </YStack>
+            </View>
 
             <TextField
               name="title"
@@ -75,12 +75,12 @@ export const RecipeForm: FC<RecipeFormProps> = ({ data, onSubmit }) => {
 
             <View rowGap={32}>
               {/* INGREDIENTS SECTION */}
-              <IngredientSectionList />
+              <IngredientsSection />
 
               {/* STEPS SECTION */}
               <StepsSection />
             </View>
-          </YStack>
+          </View>
         </ScrollView>
       </KeyboardAvoidingView>
       <FormFooter

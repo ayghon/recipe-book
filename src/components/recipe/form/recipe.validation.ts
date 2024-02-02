@@ -18,24 +18,17 @@ export const useRecipeFormValidationSchema = () => {
     .of(
       Yup.object()
         .shape({
-          items: Yup.array()
-            .min(1, t(i18nKeys.components.recipe.validation.ingredients.min))
-            .of(
-              Yup.object()
-                .shape({
-                  comment: Yup.string(),
-                  countEnd: Yup.number(),
-                  countStart: Yup.number(),
-                  isOptional: Yup.boolean(),
-                  measureUnit: Yup.mixed<MeasurementUnit>()
-                    .oneOf(Object.values(MeasurementUnit))
-                    .required(),
-                  name: Yup.string().required(),
-                })
-                .required(),
-            )
+          comment: Yup.string(),
+          countEnd: Yup.string(),
+          countStart: Yup.string().when(['measureUnit'], {
+            is: (value: MeasurementUnit) => value !== MeasurementUnit.AsNeeded,
+            then: (schema) => schema.required(),
+          }),
+          isOptional: Yup.boolean(),
+          measureUnit: Yup.mixed<MeasurementUnit>()
+            .oneOf(Object.values(MeasurementUnit))
             .required(),
-          title: Yup.string(),
+          name: Yup.string().required(),
         })
         .required(),
     )

@@ -11,7 +11,7 @@ type RecipeStepsProps = {
 
 export const RecipeSteps: FC<RecipeStepsProps> = ({ steps }) => {
   const { t } = useTranslation();
-  const { height, width } = useWindowDimensions();
+  const { height } = useWindowDimensions();
 
   return (
     <View rowGap={16}>
@@ -26,8 +26,8 @@ export const RecipeSteps: FC<RecipeStepsProps> = ({ steps }) => {
               {step.explanation}
             </Paragraph>
             {step.image && (
-              <View alignSelf="center">
-                <Image rounded height={height / 5} width={width} source={step.image} />
+              <View alignSelf="center" width="100%">
+                <Image rounded height={height / 5} width="auto" source={step.image} />
               </View>
             )}
           </View>

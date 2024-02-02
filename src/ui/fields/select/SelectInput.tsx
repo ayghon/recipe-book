@@ -3,7 +3,7 @@ import { FC, Ref } from 'react';
 import { useTranslation } from 'react-i18next';
 import { TextInput } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Adapt, Select, Sheet, Text, useTheme, YStack } from 'tamagui';
+import { Adapt, Select, Sheet, Text, useTheme, View } from 'tamagui';
 
 export type SelectItem = {
   name: string;
@@ -44,7 +44,7 @@ export const SelectInput: FC<SelectInputProps> = ({
       onValueChange={onChange}
       disablePreventBodyScroll
     >
-      <YStack flex={1} rowGap={14}>
+      <View flex={1} rowGap={8}>
         {label && (
           <Text fontSize={16} fontWeight="800">
             {label}
@@ -52,8 +52,9 @@ export const SelectInput: FC<SelectInputProps> = ({
           </Text>
         )}
         <Select.Trigger
-          borderColor={theme.gray10.val}
+          borderColor={error ? theme.red9.val : theme.color9.val}
           borderRadius={5}
+          borderWidth={2}
           iconAfter={<MaterialIcons name="keyboard-arrow-down" size={24} />}
           ref={inputRef}
           {...rest}
@@ -63,7 +64,7 @@ export const SelectInput: FC<SelectInputProps> = ({
         <Text height={18} fontSize={14} color={theme.red9.val}>
           {error}
         </Text>
-      </YStack>
+      </View>
 
       <Adapt when="sm" platform="touch">
         <Sheet

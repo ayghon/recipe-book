@@ -1,6 +1,6 @@
 import { FC, ReactNode, Ref } from 'react';
 import { TextInput as RNTextInput } from 'react-native';
-import { Input, InputProps, Text, useTheme, View, XStack, YStack } from 'tamagui';
+import { Input, InputProps, Text, useTheme, View, XStack } from 'tamagui';
 
 type TextInputProps = Omit<InputProps, 'onChange' | 'onChangeText' | 'ref'> & {
   onChange: (text: string) => void;
@@ -28,7 +28,7 @@ export const TextInput: FC<TextInputProps> = ({
   const theme = useTheme();
 
   return (
-    <YStack flex={1} rowGap={8}>
+    <View flex={1} rowGap={8}>
       {label && (
         <Text fontSize={16} fontWeight="800">
           {label}
@@ -67,6 +67,6 @@ export const TextInput: FC<TextInputProps> = ({
       <Text height={18} fontSize={14} color={theme.red9.val}>
         {error}
       </Text>
-    </YStack>
+    </View>
   );
 };

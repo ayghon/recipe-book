@@ -16,16 +16,6 @@ export type NumberInputProps = {
   isRequired?: boolean;
 };
 
-export const parseText = (text: string): number | null => {
-  const parsedValue = parseFloat(text);
-
-  if (isNaN(parsedValue)) {
-    return null;
-  }
-
-  return parsedValue;
-};
-
 export const NumberInput: FC<NumberInputProps> = ({
   label,
   autoFocus = false,
@@ -37,6 +27,11 @@ export const NumberInput: FC<NumberInputProps> = ({
   placeholder,
   isRequired,
 }) => {
+  const handleChange = (text: string) => {
+    const parsed = text.replace(/[^0-9,.]/, '');
+    onChange(parsed);
+  };
+
   return (
     <TextInput
       autoCapitalize="none"
@@ -47,10 +42,10 @@ export const NumberInput: FC<NumberInputProps> = ({
       label={label}
       startIcon={startIcon}
       maxLength={10}
-      onChange={onChange}
+      onChange={handleChange}
       placeholder={placeholder}
       endIcon={endIcon}
-      value={value?.toString()}
+      value={value}
     />
   );
 };
