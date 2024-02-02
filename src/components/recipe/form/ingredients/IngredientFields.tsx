@@ -1,12 +1,19 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import { i18nKeys } from '@i18n';
 import { Ingredient, MeasurementUnit } from '@types';
-import { SelectField, SwitchField, TextAreaField, TextField } from '@ui';
+import {
+  GradientButton,
+  GradientButtonVariant,
+  SelectField,
+  SwitchField,
+  TextAreaField,
+  TextField,
+} from '@ui';
 import { FC } from 'react';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
-import { Button, Separator, Text, useTheme, View, XStack, YStack } from 'tamagui';
+import { Separator, Text, useTheme, View, XStack, YStack } from 'tamagui';
 
 import { CountInputGroup } from './CountInputGroup';
 import { RecipeFormValues } from '../RecipeForm';
@@ -113,9 +120,9 @@ export const IngredientFields: FC<IngredientSectionProps> = ({ index }) => {
           </YStack>
         ))}
       </View>
-      <Button bordered={2} onPress={handleAddIngredient}>
+      <GradientButton variant={GradientButtonVariant.Border} onPress={handleAddIngredient}>
         {t(i18nKeys.components.recipe_form.ingredients_section.ingredients.button)}
-      </Button>
+      </GradientButton>
     </View>
   );
 };

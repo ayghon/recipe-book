@@ -28,7 +28,7 @@ export const TextInput: FC<TextInputProps> = ({
   const theme = useTheme();
 
   return (
-    <YStack flex={1} rowGap={14}>
+    <YStack flex={1} rowGap={8}>
       {label && (
         <Text fontSize={16} fontWeight="800">
           {label}
@@ -38,8 +38,8 @@ export const TextInput: FC<TextInputProps> = ({
       <XStack
         borderRadius={5}
         columnGap={4}
-        borderWidth={1}
-        borderColor={theme.color9.val}
+        borderWidth={2}
+        borderColor={error ? theme.red9.val : theme.color9.val}
         justifyContent="space-between"
       >
         {startIcon && (

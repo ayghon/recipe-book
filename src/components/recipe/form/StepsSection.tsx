@@ -2,12 +2,18 @@ import { RecipeFormValues } from '@components';
 import { MaterialIcons } from '@expo/vector-icons';
 import { i18nKeys } from '@i18n';
 import { Step } from '@types';
-import { EditImageButton, EditImageButtonVariant, TextAreaField } from '@ui';
+import {
+  EditImageButton,
+  EditImageButtonVariant,
+  GradientButton,
+  GradientButtonVariant,
+  TextAreaField,
+} from '@ui';
 import * as ImagePicker from 'expo-image-picker';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
-import { Button, Text, useTheme, View, XStack, YStack } from 'tamagui';
+import { Text, useTheme, View, XStack, YStack } from 'tamagui';
 
 export const StepsSection = () => {
   const { t } = useTranslation();
@@ -120,9 +126,9 @@ export const StepsSection = () => {
       <Text height={18} fontSize={14} color={theme.red9.val}>
         {sectionError}
       </Text>
-      <Button bordered={2} onPress={handleAddStep}>
+      <GradientButton variant={GradientButtonVariant.Border} onPress={handleAddStep}>
         {t(i18nKeys.components.recipe_form.steps_section.button)}
-      </Button>
+      </GradientButton>
     </View>
   );
 };

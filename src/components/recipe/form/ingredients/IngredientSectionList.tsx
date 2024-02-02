@@ -1,10 +1,11 @@
 import { RecipeFormValues } from '@components';
 import { i18nKeys } from '@i18n';
 import { IngredientSection } from '@types';
+import { GradientButton, GradientButtonVariant } from '@ui';
 import { useFieldArray, useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
-import { Button, Text, useTheme, View } from 'tamagui';
+import { Text, useTheme, View } from 'tamagui';
 
 import { IngredientSectionItem } from './IngredientSectionItem';
 
@@ -62,9 +63,9 @@ export const IngredientSectionList = () => {
       <Text height={18} fontSize={14} color={theme.red9.val}>
         {sectionError}
       </Text>
-      <Button bordered={2} onPress={handleAddSection}>
+      <GradientButton variant={GradientButtonVariant.Border} onPress={handleAddSection}>
         {t(i18nKeys.components.recipe_form.ingredients_section.button)}
-      </Button>
+      </GradientButton>
     </View>
   );
 };
