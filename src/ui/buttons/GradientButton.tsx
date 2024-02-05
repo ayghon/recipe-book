@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
-import { Pressable } from 'react-native';
-import { getTokens, Text } from 'tamagui';
+import { Pressable, StyleProp, ViewStyle } from 'react-native';
+import { getTokens, Text, useTheme, View } from 'tamagui';
 
 import { GradientContainer } from '../containers';
 
@@ -13,20 +13,53 @@ type GradientButtonProps = {
   onPress: () => void;
   children: string | ReactNode;
   variant?: GradientButtonVariant;
+  containerStyle?: StyleProp<ViewStyle>;
+  pressableStyle?: StyleProp<ViewStyle>;
+  isDisabled?: boolean;
 };
 
 export const GradientButton: FC<GradientButtonProps> = ({
   onPress,
   children,
   variant = GradientButtonVariant.Primary,
+  containerStyle,
+  pressableStyle,
+  isDisabled = false,
 }) => {
   const pressedStyle =
     variant === GradientButtonVariant.Border ? defaultVariantStyle : defaultVariantPressedStyle;
   const regularStyle =
     variant === GradientButtonVariant.Primary ? defaultVariantStyle : borderVariantStyle;
+  const theme = useTheme();
+
+  if (isDisabled) {
+    return (
+      <View style={[{ backgroundColor: theme.gray9.val, borderRadius: 5 }, containerStyle]}>
+        <Pressable
+          disabled={isDisabled}
+          style={[
+            {
+              margin: 4,
+            },
+            pressableStyle,
+          ]}
+        >
+          <Text
+            color={regularStyle.color}
+            padding={12}
+            textAlign="center"
+            fontWeight="800"
+            textTransform="uppercase"
+          >
+            {children}
+          </Text>
+        </Pressable>
+      </View>
+    );
+  }
 
   return (
-    <GradientContainer style={{ borderRadius: 5 }}>
+    <GradientContainer style={[{ borderRadius: 5 }, containerStyle]}>
       <Pressable
         onPress={onPress}
         style={({ pressed }) => [
@@ -35,6 +68,7 @@ export const GradientButton: FC<GradientButtonProps> = ({
             borderRadius: 5,
             margin: 4,
           },
+          pressableStyle,
         ]}
       >
         {({ pressed }) => (

@@ -1,4 +1,4 @@
-import { RecipeForm, RecipeFormValues } from '@components';
+import { RecipeFormValues, RecipeWizard } from '@components';
 import { i18nKeys } from '@i18n';
 import { useRecipeStore } from '@providers';
 import { Recipe, Routes, SearchParamList } from '@types';
@@ -45,7 +45,7 @@ export default function EditRecipeScreen() {
 
   return (
     <ContentContainer>
-      <RecipeForm onSubmit={onSubmit} data={data} />
+      <RecipeWizard onSubmit={onSubmit} data={data} />
     </ContentContainer>
   );
 }

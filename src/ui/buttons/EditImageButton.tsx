@@ -2,7 +2,7 @@ import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 import { MediaTypeOptions, useCameraPermissions } from 'expo-image-picker';
 import * as ImagePicker from 'expo-image-picker';
 import { FC } from 'react';
-import { Button, getTokens, useTheme, View } from 'tamagui';
+import { Button, getTokens, useTheme, useWindowDimensions, View } from 'tamagui';
 
 import { PressableOpacity } from './PressableOpacity';
 import { Image } from '../content';
@@ -24,6 +24,7 @@ export const EditImageButton: FC<EditImageButtonProps> = ({
   variant = EditImageButtonVariant.Full,
 }) => {
   const theme = useTheme();
+  const { width } = useWindowDimensions();
   const [permission, requestPermission] = useCameraPermissions();
 
   const handlePress = async () => {
@@ -66,13 +67,27 @@ export const EditImageButton: FC<EditImageButtonProps> = ({
     onPress(result);
   };
 
+  const size =
+    variant === EditImageButtonVariant.Full
+      ? { height: 200, width: width - 32 }
+      : { height: 100, width: 100 };
+  const iconPosition =
+    variant === EditImageButtonVariant.Full
+      ? {
+          bottom: 5,
+          right: 5,
+        }
+      : {
+          bottom: -5,
+          right: -10,
+        };
+
   if (sourceUri) {
     return (
       <PressableOpacity style={{ alignSelf: 'center' }} onPress={handlePress}>
         <View
           position="absolute"
-          right={-10}
-          bottom={-5}
+          {...iconPosition}
           zIndex={2}
           backgroundColor={getTokens().color.primary.val}
           borderRadius={100}
@@ -80,7 +95,7 @@ export const EditImageButton: FC<EditImageButtonProps> = ({
         >
           <MaterialIcons name="edit" size={24} color={getTokens().color.textDark.val} />
         </View>
-        <Image rounded height={100} width={100} source={sourceUri} />
+        <Image rounded {...size} source={sourceUri} />
       </PressableOpacity>
     );
   }
@@ -96,7 +111,7 @@ export const EditImageButton: FC<EditImageButtonProps> = ({
 
   return (
     <PressableOpacity onPress={handlePress}>
-      <View width={100} height={100} backgroundColor={theme.gray8.val} borderRadius={5}>
+      <View {...size} backgroundColor={theme.gray8.val} borderRadius={5}>
         <View alignItems="center" flex={1} justifyContent="center">
           <MaterialIcons name="edit" size={32} />
         </View>

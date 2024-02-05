@@ -21,6 +21,7 @@ const RootStack = () => {
     <Stack
       screenOptions={{
         headerLeft: BackButton,
+        headerShadowVisible: false,
         headerStyle: { backgroundColor: getTokens().color.background.val },
         headerTintColor: getTokens().color.primary.val,
         headerTitleAlign: 'center',

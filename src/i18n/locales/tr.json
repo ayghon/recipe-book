@@ -47,5 +47,8 @@
   "settings.header.title": "Ayarlar",
   "settings.language.label": "Dil",
   "language.tr": "Türk",
-  "recipe.view.ingredients.optional": "(isteğe bağlı)"
+  "recipe.view.ingredients.optional": "(isteğe bağlı)",
+  "components.recipe_form.wizard.footer.button.finish": "Bitir",
+  "components.recipe_form.wizard.footer.button.next": "Sonraki",
+  "components.recipe_form.summary_section.title": "Özet"
 }

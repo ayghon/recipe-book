@@ -73,9 +73,6 @@ export const StepsSection = () => {
 
   return (
     <View rowGap={16}>
-      <Text fontWeight="800" fontSize={20}>
-        {t(i18nKeys.components.recipe_form.steps_section.title)}
-      </Text>
       <View rowGap={24}>
         {fields.map(({ id }, index) => (
           <StepItem

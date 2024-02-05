@@ -93,6 +93,17 @@ export const i18nKeys = {
         button: 'components.recipe_form.steps_section.button',
         title: 'components.recipe_form.steps_section.title',
       },
+      summary_section: {
+        title: 'components.recipe_form.summary_section.title',
+      },
+      wizard: {
+        footer: {
+          button: {
+            finish: 'components.recipe_form.wizard.footer.button.finish',
+            next: 'components.recipe_form.wizard.footer.button.next',
+          },
+        },
+      },
     },
   },
   home: {

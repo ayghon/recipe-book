@@ -47,5 +47,8 @@
   "components.recipe.validation.steps.min": "Au moins une étape doit être incluse",
   "components.recipe.validation.ingredients.min": "Au moins un ingrédient doit être inclus",
   "language.tr": "Turque",
-  "recipe.view.ingredients.optional": "(optionnel)"
+  "recipe.view.ingredients.optional": "(optionnel)",
+  "components.recipe_form.wizard.footer.button.finish": "Finir",
+  "components.recipe_form.wizard.footer.button.next": "Suivant",
+  "components.recipe_form.summary_section.title": "Résumé"
 }

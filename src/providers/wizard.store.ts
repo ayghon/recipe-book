@@ -1,49 +1,61 @@
 import * as Crypto from 'expo-crypto';
 import { create } from 'zustand';
 
-type WizardStep<TData> = {
+export type BaseData = {
+  title?: string;
+  nextButtonTitle?: string;
+  [x: string]: unknown;
+};
+
+type WizardStep = {
   id: string;
   isActive: boolean;
-  data?: TData;
+  data?: BaseData;
 };
 
-type WizardOptions = {
-  canGoBack: boolean;
-};
-
-interface WizardState<TData> {
-  steps: WizardStep<TData>[];
-  activeStepIndex: number;
-  isLastStep: boolean;
-  lastStepIndex: number;
-  initialise: (steps: Omit<WizardStep<TData>, 'isActive' | 'id'>[]) => void;
+type WizardActions = {
+  initialise: (stepsData: BaseData[]) => void;
   nextStep: () => void;
   previousStep: () => void;
   goToStep: (index: number) => void;
-  options: WizardOptions;
-}
+  reset: () => void;
+};
 
-export const useWizardStore = create<WizardState<any>>()((set) => ({
+type WizardValues = {
+  steps: WizardStep[];
+  activeStepIndex: number;
+  isLastStep: boolean;
+  lastStepIndex: number;
+  canGoBack: boolean;
+};
+
+type WizardState = WizardActions & WizardValues;
+
+const initialState: WizardValues = {
   activeStepIndex: 0,
+  canGoBack: false,
+  isLastStep: false,
+  lastStepIndex: 0,
+  steps: [],
+};
+
+export const useWizardStore = create<WizardState>()((set) => ({
+  ...initialState,
   goToStep: (index) =>
     set((state) => {
       if (index >= state.lastStepIndex) {
         return {
           activeStepIndex: state.lastStepIndex,
+          canGoBack: true,
           isLastStep: true,
-          options: {
-            canGoBack: true,
-          },
         };
       }
 
       return {
         activeStepIndex: index,
+        canGoBack: index > 0,
         isLastStep: false,
-        options: {
-          canGoBack: index > 0,
-        },
-        steps: state.steps.reduce<WizardStep<any>[]>((acc, it, i) => {
+        steps: state.steps.reduce<WizardStep[]>((acc, it, i) => {
           if (i === index) {
             return [...acc, { ...it, isActive: true }];
           }
@@ -51,34 +63,30 @@ export const useWizardStore = create<WizardState<any>>()((set) => ({
         }, []),
       };
     }),
-  initialise: (steps) =>
+  initialise: (stepsData) =>
     set(() => {
-      if (steps.length < 2) {
-        throw new Error('Wizard.store: steps must have 2 items minimum');
+      if (stepsData.length < 2) {
+        throw new Error('Wizard.store: wizard must have 2 steps minimum');
       }
 
       return {
-        lastStepIndex: steps.length - 1,
-        steps: steps.reduce<WizardStep<any>[]>((acc, it, i) => {
+        lastStepIndex: stepsData.length - 1,
+        steps: stepsData.reduce<WizardStep[]>((acc, it, i) => {
           const id = Crypto.randomUUID();
 
           if (i === 0) {
-            return [...acc, { ...it, id, isActive: true }];
+            return [...acc, { data: it, id, isActive: true }];
           }
-          return [...acc, { ...it, id, isActive: false }];
+          return [...acc, { data: it, id, isActive: false }];
         }, []),
       };
     }),
-  isLastStep: false,
-  lastStepIndex: 0,
   nextStep: () =>
     set((state) => {
       if (state.activeStepIndex === state.lastStepIndex) {
         return {
+          canGoBack: state.activeStepIndex > 0,
           isLastStep: true,
-          options: {
-            canGoBack: state.activeStepIndex > 0,
-          },
         };
       }
 
@@ -86,23 +94,16 @@ export const useWizardStore = create<WizardState<any>>()((set) => ({
 
       return {
         activeStepIndex: nextActiveStepIndex,
+        canGoBack: nextActiveStepIndex > 0,
         isLastStep: nextActiveStepIndex === state.lastStepIndex,
-        options: {
-          canGoBack: nextActiveStepIndex > 0,
-        },
-        steps: changeActiveStepIndex<any>(state.steps, nextActiveStepIndex),
+        steps: changeActiveStepIndex(state.steps, nextActiveStepIndex),
       };
     }),
-  options: {
-    canGoBack: false,
-  },
   previousStep: () =>
     set((state) => {
       if (state.activeStepIndex === 0) {
         return {
-          options: {
-            canGoBack: false,
-          },
+          canGoBack: false,
         };
       }
 
@@ -110,18 +111,19 @@ export const useWizardStore = create<WizardState<any>>()((set) => ({
 
       return {
         activeStepIndex: nextActiveStepIndex,
+        canGoBack: nextActiveStepIndex > 0,
         isLastStep: nextActiveStepIndex === state.lastStepIndex,
-        options: {
-          canGoBack: nextActiveStepIndex > 0,
-        },
-        steps: changeActiveStepIndex<any>(state.steps, nextActiveStepIndex),
+        steps: changeActiveStepIndex(state.steps, nextActiveStepIndex),
       };
     }),
-  steps: [],
+  reset: () =>
+    set(() => {
+      return initialState;
+    }),
 }));
 
-const changeActiveStepIndex = <TData>(steps: WizardStep<TData>[], nextActiveStepIndex: number) =>
-  steps.reduce<WizardStep<TData>[]>((acc, it, i) => {
+const changeActiveStepIndex = (steps: WizardStep[], nextActiveStepIndex: number) =>
+  steps.reduce<WizardStep[]>((acc, it, i) => {
     if (i === nextActiveStepIndex) {
       return [...acc, { ...it, isActive: true }];
     }

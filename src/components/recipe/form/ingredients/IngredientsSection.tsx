@@ -53,9 +53,6 @@ export const IngredientsSection = () => {
 
   return (
     <View rowGap={16}>
-      <Text fontWeight="800" fontSize={20}>
-        {t(i18nKeys.components.recipe_form.ingredients_section.title)}
-      </Text>
       <View rowGap={12}>
         {fields.map(({ id }, index) => (
           <IngredientItem key={id} index={index} handleRemoveIngredient={handleRemoveIngredient} />
