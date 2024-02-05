@@ -20,6 +20,14 @@ export const i18nKeys = {
     yes: 'common.yes',
   },
   components: {
+    home: {
+      empty_list: {
+        message: {
+          part_1: 'components.home.empty_list.message.part_1',
+          part_2: 'components.home.empty_list.message.part_2',
+        },
+      },
+    },
     recipe: {
       validation: {
         ingredients: {

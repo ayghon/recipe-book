@@ -1,4 +1,4 @@
-import { HomeHeader } from '@components';
+import { EmptyHomeMessage, HomeHeader } from '@components';
 import { useAppConfigStore, useRecipeStore } from '@providers';
 import { Routes } from '@types';
 import { ContentContainer, RecipeCard } from '@ui';
@@ -22,6 +22,7 @@ export default function HomeScreen() {
       <HomeHeader />
       <ContentContainer>
         <FlatList
+          ListEmptyComponent={EmptyHomeMessage}
           showsVerticalScrollIndicator={false}
           showsHorizontalScrollIndicator={false}
           data={recipes}

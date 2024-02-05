@@ -13,6 +13,8 @@
   "common.no": "No",
   "common.required": "Required",
   "common.yes": "Yes",
+  "components.home.empty_list.message.part_1": "You don't have any recipe yet, create one by pressing the",
+  "components.home.empty_list.message.part_2": "sign above",
   "components.recipe.validation.ingredients.min": "At least one ingredient must be included",
   "components.recipe.validation.steps.min": "At least one step must be included",
   "components.recipe_form.button.add": "Create recipe",
