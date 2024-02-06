@@ -1,17 +1,21 @@
 import { FC, PropsWithChildren, ReactNode } from 'react';
-import { View, YStack } from 'tamagui';
+import { View } from 'tamagui';
 
 type ContentContainerProps = PropsWithChildren<{ header?: ReactNode }>;
 
 export const ContentContainer: FC<ContentContainerProps> = ({ children, header }) => {
   if (header) {
     return (
-      <YStack marginHorizontal="$4" rowGap="$4">
+      <View marginHorizontal={16} rowGap={16}>
         {header}
         {children}
-      </YStack>
+      </View>
     );
   }
 
-  return <View margin="$4">{children}</View>;
+  return (
+    <View margin={16} flex={1}>
+      {children}
+    </View>
+  );
 };

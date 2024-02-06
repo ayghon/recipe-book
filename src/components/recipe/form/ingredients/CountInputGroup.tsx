@@ -16,18 +16,18 @@ export const CountInputGroup: FC<CountInputGroupProps> = ({ itemIndex, index }) 
   const { t } = useTranslation();
   const { watch } = useFormContext<RecipeFormValues>();
 
-  if (watch(`ingredients.${index}.items.${itemIndex}.measureUnit`) === MeasurementUnit.AsNeeded) {
+  if (watch(`ingredients.${itemIndex}.measureUnit`) === MeasurementUnit.AsNeeded) {
     return null;
   }
 
   return (
-    <XStack columnGap="$2">
+    <XStack columnGap={8}>
       <NumberField
         label={t(
           i18nKeys.components.recipe_form.ingredients_section.ingredients.input.count_start.label,
         )}
         placeholder="3"
-        name={`ingredients.${index}.items.${itemIndex}.countStart`}
+        name={`ingredients.${itemIndex}.countStart`}
         isRequired
       />
       <NumberField
@@ -35,7 +35,7 @@ export const CountInputGroup: FC<CountInputGroupProps> = ({ itemIndex, index }) 
           i18nKeys.components.recipe_form.ingredients_section.ingredients.input.count_end.label,
         )}
         placeholder="4"
-        name={`ingredients.${index}.items.${itemIndex}.countEnd`}
+        name={`ingredients.${itemIndex}.countEnd`}
       />
     </XStack>
   );

@@ -14,6 +14,7 @@ interface RecipeState {
   remove: (id: string) => void;
   modify: (modifiedRecipe: Recipe) => void;
   move: (id: string, fromIndex: number, toIndex: number) => void;
+  clearStore: () => void;
 }
 
 export const useRecipeStore = create<RecipeState>()(
@@ -22,12 +23,13 @@ export const useRecipeStore = create<RecipeState>()(
       add: (recipeFormValues) =>
         set((state) => {
           const uniqueId = Crypto.randomUUID();
-          const recipe: Recipe = { id: uniqueId, ingredients: [], steps: [], ...recipeFormValues };
+          const recipe: Recipe = { id: uniqueId, ...recipeFormValues };
 
           return {
             recipes: [...state.recipes, recipe],
           };
         }),
+      clearStore: () => set(() => ({ recipes: [] })),
       getById: (id) => {
         return get().recipes.find((s) => s.id === id);
       },

@@ -1,8 +1,9 @@
 import { i18nKeys } from '@i18n';
 import { Step } from '@types';
+import { Image } from '@ui';
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Paragraph, Text, View } from 'tamagui';
+import { Paragraph, Text, useWindowDimensions, View } from 'tamagui';
 
 type RecipeStepsProps = {
   steps: Step[];
@@ -10,18 +11,26 @@ type RecipeStepsProps = {
 
 export const RecipeSteps: FC<RecipeStepsProps> = ({ steps }) => {
   const { t } = useTranslation();
+  const { height } = useWindowDimensions();
 
   return (
-    <View rowGap="$4">
+    <View rowGap={16}>
       <Text fontSize={16} fontWeight="800">
         {t(i18nKeys.components.recipe_form.steps_section.title)}
       </Text>
-      <View rowGap="$4">
+      <View rowGap={16}>
         {steps.map((step, index) => (
-          <Paragraph key={step.explanation} fontSize={16}>
-            {index + 1}.{'  '}
-            {step.explanation}
-          </Paragraph>
+          <View key={step.explanation} rowGap={16}>
+            <Paragraph fontSize={16}>
+              {index + 1}.{'  '}
+              {step.explanation}
+            </Paragraph>
+            {step.image && (
+              <View alignSelf="center" width="100%">
+                <Image rounded height={height / 5} width="auto" source={step.image} />
+              </View>
+            )}
+          </View>
         ))}
       </View>
     </View>

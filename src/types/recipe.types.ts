@@ -11,15 +11,10 @@ export enum MeasurementUnit {
   Kilogram = 'kilogram',
 }
 
-export type IngredientSection = {
-  title?: string;
-  items: Ingredient[];
-};
-
 export type Ingredient = {
   name: string;
-  countStart?: number;
-  countEnd?: number;
+  countStart?: string;
+  countEnd?: string;
   measureUnit: MeasurementUnit;
   comment?: string;
   isOptional?: boolean;
@@ -33,7 +28,7 @@ export type Step = {
 export type Recipe = {
   id: string;
   title: string;
-  ingredients: IngredientSection[];
+  ingredients: Ingredient[];
   steps: Step[];
   image?: string;
 };

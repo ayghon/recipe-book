@@ -20,6 +20,14 @@ export const i18nKeys = {
     yes: 'common.yes',
   },
   components: {
+    home: {
+      empty_list: {
+        message: {
+          part_1: 'components.home.empty_list.message.part_1',
+          part_2: 'components.home.empty_list.message.part_2',
+        },
+      },
+    },
     recipe: {
       validation: {
         ingredients: {
@@ -36,13 +44,6 @@ export const i18nKeys = {
         modify: 'components.recipe_form.button.modify',
       },
       ingredients_section: {
-        alert: {
-          delete: {
-            description: 'components.recipe_form.ingredients_section.alert.delete.description',
-            title: 'components.recipe_form.ingredients_section.alert.delete.title',
-          },
-        },
-        button: 'components.recipe_form.ingredients_section.button',
         ingredients: {
           alert: {
             delete: {
@@ -82,7 +83,6 @@ export const i18nKeys = {
         },
         input: {
           title: {
-            label: 'components.recipe_form.ingredients_section.input.title.label',
             placeholder: 'components.recipe_form.ingredients_section.input.title.placeholder',
           },
         },
@@ -100,6 +100,18 @@ export const i18nKeys = {
         },
         button: 'components.recipe_form.steps_section.button',
         title: 'components.recipe_form.steps_section.title',
+      },
+      summary_section: {
+        title: 'components.recipe_form.summary_section.title',
+      },
+      wizard: {
+        footer: {
+          button: {
+            finish: 'components.recipe_form.wizard.footer.button.finish',
+            next: 'components.recipe_form.wizard.footer.button.next',
+            previous: 'components.recipe_form.wizard.footer.button.previous',
+          },
+        },
       },
     },
   },

@@ -1,4 +1,4 @@
-import { RecipeForm, RecipeFormValues } from '@components';
+import { RecipeFormValues, RecipeWizard } from '@components';
 import { useRecipeStore } from '@providers';
 import { ContentContainer } from '@ui';
 import { useRouter } from 'expo-router';
@@ -14,7 +14,7 @@ export default function CreateRecipeScreen() {
 
   return (
     <ContentContainer>
-      <RecipeForm onSubmit={onSubmit} />
+      <RecipeWizard onSubmit={onSubmit} />
     </ContentContainer>
   );
 }

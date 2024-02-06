@@ -16,16 +16,16 @@ export const ListItemButton: FC<ListItemButtonProps> = ({ onPress, children, end
   return (
     <PressableOpacity onPress={onPress}>
       <XStack
-        borderRadius="$2"
-        paddingVertical="$4.5"
-        paddingHorizontal="$3.5"
+        borderRadius={5}
+        paddingVertical={20}
+        paddingHorizontal={16}
         justifyContent="space-between"
         alignItems="center"
       >
         <Text fontWeight="800" fontSize={16}>
           {children}
         </Text>
-        <XStack alignItems="center" columnGap="$2">
+        <XStack alignItems="center" columnGap={8}>
           <Text fontSize={14} color={theme.color9.val}>
             {endLabel}
           </Text>

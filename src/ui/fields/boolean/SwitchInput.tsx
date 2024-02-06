@@ -20,9 +20,9 @@ export const SwitchInput: FC<SwitchInputProps> = ({
 }) => {
   const theme = useTheme();
   return (
-    <XStack width={200} alignItems="center" space="$4">
+    <XStack width={200} alignItems="center" space={16}>
       {label && (
-        <XStack columnGap="$4">
+        <XStack columnGap={16}>
           <Text minWidth={90} justifyContent="flex-end" fontSize={16} fontWeight="800">
             {label}
             {isRequired && '*'}

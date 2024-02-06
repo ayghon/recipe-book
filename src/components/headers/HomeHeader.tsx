@@ -1,30 +1,44 @@
-import { HeaderTitle } from '@react-navigation/elements';
-import { NativeStackHeaderProps } from '@react-navigation/native-stack';
-import { Dimensions } from 'react-native';
+import { IS_ANDROID } from '@constants';
+import { MaterialIcons } from '@expo/vector-icons';
+import { StructureType, useAppConfigStore } from '@providers';
+import { Routes } from '@types';
+import { Link } from 'expo-router';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { View, XStack } from 'tamagui';
+import { getTokens, XStack } from 'tamagui';
 
-import { RootStackHeaderRight } from './RootStackHeaderRight';
+import { headerStyles } from './header.styles';
+import { SwitchStructureButton } from '../home';
 
-export const HomeHeader = (props: NativeStackHeaderProps) => {
-  const {
-    options: { title = '' },
-  } = props;
+export const HomeHeader = () => {
   const { top } = useSafeAreaInsets();
+  const { changeStructureType, homeStructureType } = useAppConfigStore();
 
   return (
-    <XStack alignItems="center" height={40} marginTop={top}>
-      <View width={Dimensions.get('window').width / 3} />
-      <View width={Dimensions.get('window').width / 3} alignItems="center">
-        <HeaderTitle>{title}</HeaderTitle>
-      </View>
-      <View
-        alignItems="flex-end"
-        justifyContent="center"
-        width={Dimensions.get('window').width / 3}
-      >
-        <RootStackHeaderRight />
-      </View>
+    <XStack paddingHorizontal={16} columnGap={8} paddingTop={top + (IS_ANDROID ? 12 : 0)}>
+      <XStack flex={1}>
+        <SwitchStructureButton
+          onChange={(value) => changeStructureType(value as StructureType)}
+          value={homeStructureType}
+        />
+      </XStack>
+      <XStack flex={1} justifyContent="flex-end">
+        <Link asChild href={Routes.RecipeCreate}>
+          <MaterialIcons
+            color={getTokens().color.textLight.val}
+            style={headerStyles.icon}
+            name="add"
+            size={24}
+          />
+        </Link>
+        <Link asChild href={Routes.Settings}>
+          <MaterialIcons
+            color={getTokens().color.textLight.val}
+            style={headerStyles.icon}
+            name="settings"
+            size={24}
+          />
+        </Link>
+      </XStack>
     </XStack>
   );
 };

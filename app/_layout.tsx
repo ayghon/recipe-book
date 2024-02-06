@@ -1,9 +1,10 @@
-import { ViewRecipeHeaderRight, HomeHeader } from '@components';
+import { BackButton, ViewRecipeHeaderRight } from '@components';
 import { i18nKeys } from '@i18n';
 import { AppProvider } from '@providers';
 import { Routes } from '@types';
 import { Stack } from 'expo-router';
 import { useTranslation } from 'react-i18next';
+import { getTokens } from 'tamagui';
 
 export default function RootLayout() {
   return (
@@ -17,12 +18,21 @@ const RootStack = () => {
   const { t } = useTranslation();
 
   return (
-    <Stack>
+    <Stack
+      screenOptions={{
+        headerLeft: BackButton,
+        headerShadowVisible: false,
+        headerStyle: { backgroundColor: getTokens().color.background.val },
+        headerTintColor: getTokens().color.primary.val,
+        headerTitleAlign: 'center',
+        headerTitleStyle: { color: getTokens().color.textLight.val },
+      }}
+    >
       <Stack.Screen
         name={Routes.Home}
         options={{
-          header: HomeHeader,
-          title: t(i18nKeys.home.header.title),
+          headerShown: false,
+          title: '',
         }}
       />
       <Stack.Screen

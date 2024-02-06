@@ -27,7 +27,7 @@ export const SheetModal: FC<PropsWithChildren<SheetModalProps>> = ({
     >
       <Sheet.Overlay />
       <Sheet.Handle />
-      <Sheet.Frame paddingBottom={bottom + 16} paddingTop="$4" paddingHorizontal="$4">
+      <Sheet.Frame paddingBottom={bottom + 16} paddingTop={16} paddingHorizontal={16}>
         {children}
       </Sheet.Frame>
     </Sheet>

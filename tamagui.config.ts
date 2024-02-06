@@ -5,8 +5,14 @@ const tokens = createTokens({
   ...config.tokens,
   color: {
     ...config.tokens.color,
+    background: '#EEEEEE',
+    border: '#262626',
+    card: '#171717',
     primary: '#009688',
+    primaryDark: '#00756a',
     primaryLight: '#00c9b1',
+    textDark: '#EDEDED',
+    textLight: '#171717',
   },
 });
 

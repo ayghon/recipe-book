@@ -2,7 +2,7 @@ import { Routes, SearchParamList } from '@types';
 
 export const getPath = (route: Routes, params?: SearchParamList<typeof route>) => {
   if (!params) {
-    return route;
+    return route.replace('/index', '');
   }
 
   return Object.entries(params)

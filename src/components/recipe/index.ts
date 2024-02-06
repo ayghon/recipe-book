@@ -1,2 +1,2 @@
-export * from './RecipeForm';
+export * from './form';
 export * from './view';
