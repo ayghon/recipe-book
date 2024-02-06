@@ -40,6 +40,7 @@
   "components.recipe_form.summary_section.title": "Summary",
   "components.recipe_form.wizard.footer.button.finish": "Finish",
   "components.recipe_form.wizard.footer.button.next": "Next",
+  "components.recipe_form.wizard.footer.button.previous": "Previous",
   "home.header.title": "Recipe book",
   "language.en": "English",
   "language.fr": "French",

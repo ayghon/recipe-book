@@ -109,6 +109,7 @@ export const i18nKeys = {
           button: {
             finish: 'components.recipe_form.wizard.footer.button.finish',
             next: 'components.recipe_form.wizard.footer.button.next',
+            previous: 'components.recipe_form.wizard.footer.button.previous',
           },
         },
       },

@@ -1,7 +1,7 @@
 import { MaterialIcons } from '@expo/vector-icons';
 import { i18nKeys } from '@i18n';
 import { useTranslation } from 'react-i18next';
-import { getTokens, Text, useTheme, View } from 'tamagui';
+import { getTokens, Text, useTheme } from 'tamagui';
 
 export const EmptyHomeMessage = () => {
   const theme = useTheme();
@@ -17,9 +17,7 @@ export const EmptyHomeMessage = () => {
       alignSelf="center"
     >
       {t(i18nKeys.components.home.empty_list.message.part_1)}
-      <View alignItems="center">
-        <MaterialIcons name="add" color={getTokens().color.textLight.val} size={24} />
-      </View>
+      <MaterialIcons name="add" color={getTokens().color.textLight.val} size={24} />
       {t(i18nKeys.components.home.empty_list.message.part_2)}
     </Text>
   );

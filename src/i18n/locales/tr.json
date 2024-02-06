@@ -49,8 +49,9 @@
   "language.tr": "Türk",
   "recipe.view.ingredients.optional": "(isteğe bağlı)",
   "components.recipe_form.wizard.footer.button.finish": "Bitir",
-  "components.recipe_form.wizard.footer.button.next": "Sonraki",
+  "components.recipe_form.wizard.footer.button.next": "İleri",
   "components.recipe_form.summary_section.title": "Özet",
   "components.home.empty_list.message.part_1": "Henüz tarifiniz yok, yukarıdaki",
-  "components.home.empty_list.message.part_2": "işarete basarak tarifinizi oluşturun"
+  "components.home.empty_list.message.part_2": "işarete basarak tarifinizi oluşturun",
+  "components.recipe_form.wizard.footer.button.previous": "Dön"
 }

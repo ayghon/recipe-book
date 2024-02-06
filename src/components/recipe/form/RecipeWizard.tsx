@@ -100,8 +100,8 @@ export const RecipeWizard: FC<RecipeWizardProps> = ({ onSubmit, data }) => {
         >
           {steps[activeStepIndex]?.data?.component as ReactNode}
         </ScrollView>
+        <WizardFooter onFinish={methods.handleSubmit(onSubmit)} />
       </KeyboardAvoidingView>
-      <WizardFooter onFinish={methods.handleSubmit(onSubmit)} />
     </FormProvider>
   );
 };

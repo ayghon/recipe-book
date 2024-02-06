@@ -1,4 +1,5 @@
 import { RecipeFormValues } from '@components';
+import { IS_ANDROID } from '@constants';
 import { i18nKeys } from '@i18n';
 import { useWizardStore } from '@providers';
 import { GradientButton, GradientButtonVariant } from '@ui';
@@ -31,14 +32,19 @@ export const WizardFooter: FC<WizardFooterProps> = ({ onFinish }) => {
   const customNextStepLabel = steps[activeStepIndex]?.data?.nextButtonTitle;
 
   return (
-    <XStack marginBottom={bottom} justifyContent="space-between" columnGap={32} marginTop={16}>
+    <XStack
+      marginBottom={IS_ANDROID ? bottom + 16 : bottom}
+      justifyContent="space-between"
+      columnGap={32}
+      marginTop={16}
+    >
       {canGoBack ? (
         <GradientButton
           containerStyle={{ flex: 1 }}
           variant={GradientButtonVariant.Border}
           onPress={previousStep}
         >
-          Previous
+          {t(i18nKeys.components.recipe_form.wizard.footer.button.previous)}
         </GradientButton>
       ) : (
         <View flex={1} />
