@@ -7,6 +7,7 @@ import { persist } from 'zustand/middleware';
 export enum StructureType {
   List = 'list',
   Card = 'card',
+  SimplifiedList = 'simplified-list',
 }
 
 interface AppConfigStore {

@@ -19,6 +19,24 @@ export const RecipeCard: FC<RecipeCardProps> = ({
 }) => {
   const theme = useTheme();
 
+  if (type === StructureType.SimplifiedList) {
+    return (
+      <ListItem
+        elevate
+        padding={0}
+        hoverTheme
+        pressTheme
+        onPress={onPress}
+        borderRadius={5}
+        paddingStart={16}
+      >
+        <ListItem.Text paddingVertical={12} paddingHorizontal={8}>
+          {title}
+        </ListItem.Text>
+      </ListItem>
+    );
+  }
+
   if (type === StructureType.List) {
     return (
       <ListItem

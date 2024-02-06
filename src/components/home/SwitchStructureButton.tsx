@@ -15,6 +15,9 @@ export const SwitchStructureButton: FC<{
       <ToggleGroup.Item value={StructureType.List}>
         <MaterialIcons name="view-list" size={24} color={getTokens().color.textLight.val} />
       </ToggleGroup.Item>
+      <ToggleGroup.Item value={StructureType.SimplifiedList}>
+        <MaterialIcons name="view-headline" size={24} color="black" />
+      </ToggleGroup.Item>
     </ToggleGroup>
   );
 };
