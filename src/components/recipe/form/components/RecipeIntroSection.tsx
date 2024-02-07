@@ -6,7 +6,7 @@ import { useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { View } from 'tamagui';
 
-import { RecipeFormValues } from './recipe.types';
+import { RecipeFormValues } from '../recipe.types';
 
 export const RecipeIntroSection: FC = () => {
   const { t } = useTranslation();

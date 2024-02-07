@@ -10,13 +10,13 @@ import { useTranslation } from 'react-i18next';
 import { KeyboardAvoidingView, Platform } from 'react-native';
 import { ScrollView } from 'tamagui';
 
-import { RecipeIntroSection } from './RecipeIntroSection';
-import { SummarySection } from './SummarySection';
+import { RecipeIntroSection } from './components/RecipeIntroSection';
+import { SummarySection } from './components/SummarySection';
+import { WizardFooter } from './components/WizardFooter';
 import { IngredientsSection } from './ingredients/IngredientsSection';
 import { RecipeFormValues } from './recipe.types';
 import { useRecipeFormValidationSchema } from './recipe.validation';
 import { StepsSection } from './steps/StepsSection';
-import { WizardFooter } from './wizard/WizardFooter';
 
 type RecipeWizardProps = {
   onSubmit: (values: RecipeFormValues) => void;

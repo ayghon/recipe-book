@@ -1,7 +1,7 @@
 import { useFormContext } from 'react-hook-form';
 
-import { RecipeFormValues } from './recipe.types';
-import { RecipeView } from '../view/RecipeView';
+import { RecipeView } from '../../view/RecipeView';
+import { RecipeFormValues } from '../recipe.types';
 
 export const SummarySection = () => {
   const { getValues } = useFormContext<RecipeFormValues>();
