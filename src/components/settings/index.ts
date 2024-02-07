@@ -1,1 +1,1 @@
-export * from './ChangeLanguageModal';
+export * from './ChangeLanguage';

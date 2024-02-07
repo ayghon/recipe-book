@@ -1,10 +1,10 @@
-import { ChangeLanguageModal } from '@components';
+import { ChangeLanguage } from '@components';
 import { ContentContainer } from '@ui';
 
 export default function SettingsScreen() {
   return (
     <ContentContainer>
-      <ChangeLanguageModal />
+      <ChangeLanguage />
     </ContentContainer>
   );
 }

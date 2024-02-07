@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, View } from 'tamagui';
 
-export const ChangeLanguageModal = () => {
+export const ChangeLanguage = () => {
   const [t, { language, changeLanguage }] = useTranslation();
   const languageText = t(i18nKeys.language[language as keyof typeof i18nKeys.language]);
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
