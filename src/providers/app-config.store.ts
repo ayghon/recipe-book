@@ -1,8 +1,7 @@
 import { StorageKeys } from '@constants';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { create } from 'zustand';
-import { createJSONStorage } from 'zustand/esm/middleware';
-import { persist } from 'zustand/middleware';
+import { createJSONStorage, persist } from 'zustand/middleware';
 
 export enum StructureType {
   List = 'list',
