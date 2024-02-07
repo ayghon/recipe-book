@@ -40,6 +40,7 @@ export const TextAreaInput: FC<TextAreaInputProps> = ({
         selectionColor="grey"
         onChangeText={onChange}
         value={value}
+        textAlignVertical="top"
         placeholder={placeholder}
         autoFocus={autoFocus}
         {...rest}
