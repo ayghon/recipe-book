@@ -1,5 +1,5 @@
 import { FC, Ref } from 'react';
-import { Separator, Switch, Text, useTheme, XStack } from 'tamagui';
+import { Separator, Switch, TamaguiElement, Text, useTheme, XStack } from 'tamagui';
 
 type SwitchInputProps = {
   onChange: (value: boolean) => void;
@@ -7,7 +7,7 @@ type SwitchInputProps = {
   defaultChecked?: boolean;
   label?: string;
   isRequired?: boolean;
-  inputRef?: Ref<typeof Switch>;
+  inputRef?: Ref<TamaguiElement>;
 };
 
 export const SwitchInput: FC<SwitchInputProps> = ({
@@ -20,7 +20,7 @@ export const SwitchInput: FC<SwitchInputProps> = ({
 }) => {
   const theme = useTheme();
   return (
-    <XStack width={200} alignItems="center" space={16}>
+    <XStack width={200} alignItems="center" gap={16}>
       {label && (
         <XStack columnGap={16}>
           <Text minWidth={90} justifyContent="flex-end" fontSize={16} fontWeight="800">
@@ -31,6 +31,7 @@ export const SwitchInput: FC<SwitchInputProps> = ({
         </XStack>
       )}
       <Switch
+        unstyled
         ref={inputRef}
         size="$4"
         backgroundColor={value ?? defaultChecked ? '$primaryLight' : theme.gray7.val}
@@ -38,7 +39,7 @@ export const SwitchInput: FC<SwitchInputProps> = ({
         onCheckedChange={onChange}
         defaultChecked={defaultChecked}
       >
-        <Switch.Thumb backgroundColor="$primary" animation="quick" />
+        <Switch.Thumb backgroundColor="$primaryDark" animation="quick" />
       </Switch>
     </XStack>
   );

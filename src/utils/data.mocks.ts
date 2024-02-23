@@ -5,34 +5,22 @@ export const recipesMocks: Recipe[] = [
     id: '1',
     image: 'https://i.nefisyemektarifleri.com/2023/12/26/airfryer-yogurtlu-sebze-mezesi.jpg',
     ingredients: [
+      { countStart: '1', measureUnit: MeasurementUnit.Piece, name: 'kabak' },
+      { countStart: '1', measureUnit: MeasurementUnit.Piece, name: 'patates' },
+      { countStart: '1', measureUnit: MeasurementUnit.Piece, name: 'havuç' },
+      { countStart: '1', measureUnit: MeasurementUnit.Piece, name: 'yeşil biber' },
+      { countStart: '1', measureUnit: MeasurementUnit.Piece, name: 'kırmızı biber' },
+      { countEnd: '4', countStart: '3', measureUnit: MeasurementUnit.Piece, name: 'sarımsak' },
       {
-        items: [
-          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'kabak' },
-          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'patates' },
-          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'havuç' },
-          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'yeşil biber' },
-          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'kırmızı biber' },
-          { countEnd: 4, countStart: 3, measureUnit: MeasurementUnit.Piece, name: 'sarımsak' },
-        ],
+        countEnd: '4',
+        countStart: '3',
+        measureUnit: MeasurementUnit.CoffeeSpoon,
+        name: 'zeytinyağı',
       },
-      {
-        items: [
-          {
-            countEnd: 4,
-            countStart: 3,
-            measureUnit: MeasurementUnit.CoffeeSpoon,
-            name: 'zeytinyağı',
-          },
-          { countStart: 1, measureUnit: MeasurementUnit.CoffeeSpoon, name: 'domates salçası' },
-          { countStart: 1, measureUnit: MeasurementUnit.CoffeeSpoon, name: 'kekik' },
-          { countStart: 1, measureUnit: MeasurementUnit.TeaSpoon, name: 'tuz' },
-        ],
-        title: 'Sosu için',
-      },
-      {
-        items: [{ countStart: 1, measureUnit: MeasurementUnit.AsNeeded, name: 'Süzme yoğurt' }],
-        title: 'Servis için',
-      },
+      { countStart: '1', measureUnit: MeasurementUnit.CoffeeSpoon, name: 'domates salçası' },
+      { countStart: '1', measureUnit: MeasurementUnit.CoffeeSpoon, name: 'kekik' },
+      { countStart: '1', measureUnit: MeasurementUnit.TeaSpoon, name: 'tuz' },
+      { countStart: '1', measureUnit: MeasurementUnit.AsNeeded, name: 'Süzme yoğurt' },
     ],
     steps: [
       {
@@ -68,33 +56,24 @@ export const recipesMocks: Recipe[] = [
     image:
       'https://i.nefisyemektarifleri.com/2023/12/27/siviyagli-portakalli-catlak-kurabiyevideolu.jpg',
     ingredients: [
+      { countStart: '2', measureUnit: MeasurementUnit.Piece, name: 'yumurta' },
+      { countStart: '1', measureUnit: MeasurementUnit.TeaSpoon, name: 'şeker' },
+      { countStart: '0.5', measureUnit: MeasurementUnit.TeaSpoon, name: 'sıvı yağ' },
+      { countStart: '0.5', measureUnit: MeasurementUnit.TeaSpoon, name: 'portakal suyu' },
+      { countStart: '1', measureUnit: MeasurementUnit.AsNeeded, name: 'portakal kabuğu rendesi' },
       {
-        items: [
-          { countStart: 2, measureUnit: MeasurementUnit.Piece, name: 'yumurta' },
-          { countStart: 1, measureUnit: MeasurementUnit.TeaSpoon, name: 'şeker' },
-          { countStart: 0.5, measureUnit: MeasurementUnit.TeaSpoon, name: 'sıvı yağ' },
-          { countStart: 0.5, measureUnit: MeasurementUnit.TeaSpoon, name: 'portakal suyu' },
-          { countStart: 1, measureUnit: MeasurementUnit.AsNeeded, name: 'portakal kabuğu rendesi' },
-          {
-            comment: 'Renk versin diye kullandım yoksa kullanmak zorunda değilsiniz',
-            countStart: 1,
-            isOptional: true,
-            measureUnit: MeasurementUnit.TeaSpoon,
-            name: 'zerdeçal',
-          },
-          { countEnd: 4, countStart: 3.5, measureUnit: MeasurementUnit.Glass, name: 'un' },
-          { countStart: 1, measureUnit: MeasurementUnit.Piece, name: 'kabartma tozu' },
-        ],
+        comment: 'Renk versin diye kullandım yoksa kullanmak zorunda değilsiniz',
+        countStart: '1',
+        isOptional: true,
+        measureUnit: MeasurementUnit.TeaSpoon,
+        name: 'zerdeçal',
       },
+      { countEnd: '4', countStart: '3.5', measureUnit: MeasurementUnit.Glass, name: 'un' },
+      { countStart: '1', measureUnit: MeasurementUnit.Piece, name: 'kabartma tozu' },
       {
-        items: [
-          {
-            countStart: 4,
-            measureUnit: MeasurementUnit.TableSpoon,
-            name: 'pudra şekeri',
-          },
-        ],
-        title: 'Bulamak için',
+        countStart: '4',
+        measureUnit: MeasurementUnit.TableSpoon,
+        name: 'pudra şekeri',
       },
     ],
     steps: [
