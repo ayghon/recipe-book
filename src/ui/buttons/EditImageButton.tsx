@@ -69,7 +69,7 @@ export const EditImageButton: FC<EditImageButtonProps> = ({
 
   const size =
     variant === EditImageButtonVariant.Full
-      ? { height: 200, width: width - 32 }
+      ? { height: width - 32, width: width - 32 }
       : { height: 100, width: 100 };
   const iconPosition =
     variant === EditImageButtonVariant.Full

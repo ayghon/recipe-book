@@ -1,26 +1,21 @@
 import { i18nKeys } from '@i18n';
 import { EditImageButton, EditImageButtonVariant, TextField } from '@ui';
 import * as ImagePicker from 'expo-image-picker';
-import { FC, useState } from 'react';
-import { useFormContext } from 'react-hook-form';
+import { FC } from 'react';
+import { useController } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { View } from 'tamagui';
-
-import { RecipeFormValues } from '../recipe.types';
 
 export const RecipeIntroSection: FC = () => {
   const { t } = useTranslation();
   const {
-    setValue,
-    formState: { defaultValues },
-  } = useFormContext<RecipeFormValues>();
-  const [image, setImage] = useState(defaultValues?.image ?? '');
+    field: { value, onChange },
+  } = useController({ name: 'image' });
 
   const onEditImagePress = async (result: ImagePicker.ImagePickerResult) => {
     if (!result.canceled && result.assets[0]) {
       const selectedImage = result.assets[0].uri;
-      setValue('image', selectedImage);
-      setImage(selectedImage);
+      onChange(selectedImage);
     }
   };
 
@@ -29,7 +24,7 @@ export const RecipeIntroSection: FC = () => {
       <View alignItems="center">
         <EditImageButton
           variant={EditImageButtonVariant.Full}
-          sourceUri={image}
+          sourceUri={value}
           onPress={onEditImagePress}
         />
       </View>
