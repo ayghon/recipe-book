@@ -1,8 +1,8 @@
-import { IS_ANDROID } from '@constants';
 import { MaterialIcons } from '@expo/vector-icons';
 import { StructureType, useAppConfigStore } from '@providers';
 import { Routes } from '@types';
 import { Link } from 'expo-router';
+import { Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { getTokens, XStack } from 'tamagui';
 
@@ -14,7 +14,11 @@ export const HomeHeader = () => {
   const { changeStructureType, homeStructureType } = useAppConfigStore();
 
   return (
-    <XStack paddingHorizontal={16} columnGap={8} paddingTop={top + (IS_ANDROID ? 12 : 0)}>
+    <XStack
+      paddingHorizontal={16}
+      columnGap={8}
+      paddingTop={Platform.select({ android: top + 12, ios: top })}
+    >
       <XStack flex={1}>
         <SwitchStructureButton
           onChange={(value) => changeStructureType(value as StructureType)}

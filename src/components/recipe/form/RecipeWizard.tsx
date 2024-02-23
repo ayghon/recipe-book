@@ -90,7 +90,7 @@ export const RecipeWizard: FC<RecipeWizardProps> = ({ onSubmit, data }) => {
       <KeyboardAvoidingView
         style={{ flex: 1 }}
         keyboardVerticalOffset={Platform.select({ android: headerHeight + 8, ios: headerHeight })}
-        behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
+        behavior={Platform.select({ android: 'height', ios: 'padding' })}
       >
         <ScrollView
           height="100%"
