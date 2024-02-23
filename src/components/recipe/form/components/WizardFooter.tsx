@@ -1,11 +1,11 @@
 import { RecipeFormValues } from '@components';
-import { IS_ANDROID } from '@constants';
 import { i18nKeys } from '@i18n';
 import { useWizardStore } from '@providers';
 import { GradientButton, GradientButtonVariant } from '@ui';
 import { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
+import { Platform } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { View, XStack } from 'tamagui';
 
@@ -33,10 +33,10 @@ export const WizardFooter: FC<WizardFooterProps> = ({ onFinish }) => {
 
   return (
     <XStack
-      marginBottom={IS_ANDROID ? bottom + 16 : bottom}
+      marginBottom={Platform.select({ android: bottom + 16, ios: bottom - 8 })}
       justifyContent="space-between"
       columnGap={32}
-      marginTop={16}
+      marginTop={8}
     >
       {canGoBack ? (
         <GradientButton
