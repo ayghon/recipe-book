@@ -1,15 +1,15 @@
 import { RecipeFormValues, RecipeWizard } from '@components';
 import { useRecipeStore } from '@providers';
 import { ContentContainer } from '@ui';
-import { useRouter } from 'expo-router';
+import { useGoBackOrGoHome } from '@utils';
 
 export default function CreateRecipeScreen() {
   const { add } = useRecipeStore();
-  const { back } = useRouter();
+  const backOrGoHome = useGoBackOrGoHome();
 
   const onSubmit = (values: RecipeFormValues) => {
     add(values);
-    back();
+    backOrGoHome();
   };
 
   return (

@@ -1,4 +1,5 @@
 import { Routes, SearchParamList } from '@types';
+import { useRouter } from 'expo-router';
 
 export const getPath = (route: Routes, params?: SearchParamList<typeof route>) => {
   if (!params) {
@@ -10,4 +11,18 @@ export const getPath = (route: Routes, params?: SearchParamList<typeof route>) =
       return acc.replace(`[${key}]`, value);
     }, route)
     .replace('/index', '');
+};
+
+export const useGoBackOrGoHome = () => {
+  const { canGoBack, replace, back } = useRouter();
+
+  return () => {
+    if (canGoBack()) {
+      back();
+      return null;
+    }
+
+    replace('/');
+    return null;
+  };
 };

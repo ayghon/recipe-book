@@ -3,24 +3,25 @@ import { i18nKeys } from '@i18n';
 import { useRecipeStore } from '@providers';
 import { Recipe, Routes, SearchParamList } from '@types';
 import { ContentContainer } from '@ui';
-import { useLocalSearchParams, useRouter } from 'expo-router';
+import { useGoBackOrGoHome } from '@utils';
+import { useLocalSearchParams } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 
 export default function EditRecipeScreen() {
-  const { back } = useRouter();
+  const backOrGoHome = useGoBackOrGoHome();
   const { t } = useTranslation();
   const { id } = useLocalSearchParams<SearchParamList<Routes.RecipeEdit>>();
   const { getById, modify } = useRecipeStore();
 
   if (!id) {
-    return back();
+    return backOrGoHome();
   }
 
   const data: Recipe | undefined = getById(id);
 
   if (!data) {
-    return back();
+    return backOrGoHome();
   }
 
   const onSubmit = (values: RecipeFormValues) => {
@@ -35,7 +36,7 @@ export default function EditRecipeScreen() {
         {
           onPress: () => {
             modify({ ...data, ...values });
-            back();
+            backOrGoHome();
           },
           text: t(i18nKeys.common.yes),
         },

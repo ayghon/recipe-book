@@ -14,15 +14,20 @@ export const useInitI18n = (enabled = true) => {
   const [deviceLanguage] = useLocales();
   const storageLanguage = deviceLanguage?.languageCode;
 
-  const supportedStorageLanguage: undefined | string = Object.values(Language).includes(
+  const supportedStorageLanguage: undefined | Language = Object.values(Language).includes(
     storageLanguage as Language,
   )
-    ? storageLanguage
+    ? (storageLanguage as Language)
     : undefined;
 
   useEffect(() => {
     const init = async () => {
-      const storageLanguage = await AsyncStorage.getItem(StorageKeys.Language);
+      let storageLanguage: string | null = null;
+      try {
+        storageLanguage = await AsyncStorage.getItem(StorageKeys.Language);
+      } catch {
+        console.error('AsyncStorage has failed to retrieve the store language');
+      }
 
       await i18n
         .use(initReactI18next) // passes i18n down to react-i18next
@@ -33,6 +38,7 @@ export const useInitI18n = (enabled = true) => {
             escapeValue: false,
           },
           lng: storageLanguage ?? supportedStorageLanguage ?? DEFAULT_LANGUAGE,
+          load: 'languageOnly',
           resources: {
             en: { translation: en },
             fr: { translation: fr },
@@ -40,6 +46,7 @@ export const useInitI18n = (enabled = true) => {
           },
           returnNull: false,
         });
+
       setLoading(false);
     };
 

@@ -11,10 +11,10 @@ export const FontsProvider: FC<PropsWithChildren> = ({ children }) => {
   if (!loaded) {
     return (
       <XStack flex={1} justifyContent="center" alignItems="center">
-        <Spinner size="large" />
+        <Spinner color="$primary" size="large" />
       </XStack>
     );
   }
 
-  return <>{children}</>;
+  return children;
 };

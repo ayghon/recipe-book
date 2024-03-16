@@ -1,5 +1,6 @@
 {
   "common.cancel": "Cancel",
+  "common.error": "Error",
   "common.measure_unit.as_needed": "as needed",
   "common.measure_unit.coffee_spoon": "coffee spoon",
   "common.measure_unit.glass": "glass",
@@ -53,5 +54,7 @@
   "recipe.view.alert.delete.title": "Confirm delete",
   "recipe.view.ingredients.optional": "(optional)",
   "settings.header.title": "Settings",
-  "settings.language.label": "Language"
+  "settings.language.alert.error.description": "Changing language has failed.",
+  "settings.language.label": "Language",
+  "unmatched.title.no_path": "This screen does not exist"
 }
