@@ -60,7 +60,7 @@ export default function HomeScreen() {
           contentContainerStyle={{
             gap: 12,
           }}
-          renderItem={({ item, index }) => (
+          renderItem={({ item }) => (
             <RecipeCard
               type={homeStructureType}
               onPress={() => onRecipePress(item.id)}
