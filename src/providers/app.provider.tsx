@@ -1,11 +1,14 @@
 import { useInitI18n } from '@i18n';
 import { DefaultTheme, Theme, ThemeProvider } from '@react-navigation/native';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { FC, PropsWithChildren } from 'react';
+import { FC, PropsWithChildren, useEffect } from 'react';
 import { getTokens, TamaguiProvider } from 'tamagui';
 
-import { FontsProvider } from './fonts.provider';
 import config from '../../tamagui.config';
+
+SplashScreen.preventAutoHideAsync();
 
 const theme: Theme = {
   ...DefaultTheme,
@@ -20,20 +23,28 @@ const theme: Theme = {
 };
 
 export const AppProvider: FC<PropsWithChildren> = ({ children }) => {
+  const [loaded] = useFonts({
+    Inter: require('@tamagui/font-inter/otf/Inter-Medium.otf'),
+    InterBold: require('@tamagui/font-inter/otf/Inter-Bold.otf'),
+  });
   const { isLoading } = useInitI18n();
 
-  if (isLoading) {
+  useEffect(() => {
+    if (!isLoading && loaded) {
+      SplashScreen.hideAsync();
+    }
+  }, [isLoading, loaded]);
+
+  if (isLoading || !loaded) {
     return null;
   }
 
   return (
     <TamaguiProvider config={config}>
-      <FontsProvider>
-        <ThemeProvider value={theme}>
-          <StatusBar style="dark" />
-          {children}
-        </ThemeProvider>
-      </FontsProvider>
+      <ThemeProvider value={theme}>
+        <StatusBar style="dark" />
+        {children}
+      </ThemeProvider>
     </TamaguiProvider>
   );
 };
