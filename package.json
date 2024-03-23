@@ -51,7 +51,8 @@
     "tamagui": "^1.91.4",
     "tamagui-loader": "^1.91.4",
     "yup": "^1.4.0",
-    "zustand": "^4.5.2"
+    "zustand": "^4.5.2",
+    "react-native-reanimated": "~3.6.2"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0",
