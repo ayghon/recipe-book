@@ -1,7 +1,8 @@
 import { MaterialIcons } from '@expo/vector-icons';
+import { AnimatedScaleView } from '@ui';
 import { Link } from 'expo-router';
 import { FC } from 'react';
-import { getTokens, View } from 'tamagui';
+import { getTokens } from 'tamagui';
 
 type BackButtonProps = {
   canGoBack: boolean;
@@ -17,10 +18,10 @@ export const BackButton: FC<BackButtonProps> = ({
   }
 
   return (
-    <View justifyContent="center">
-      <Link href="..">
+    <AnimatedScaleView scale={-0.9} style={{ justifyContent: 'center' }}>
+      <Link suppressHighlighting href="..">
         <MaterialIcons size={24} name="arrow-back-ios" color={tintColor} />
       </Link>
-    </View>
+    </AnimatedScaleView>
   );
 };

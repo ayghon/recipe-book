@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
 import { Text, useTheme, View } from 'tamagui';
 
-import { StepItem } from './StepItem';
+import { StepItem } from './components/StepItem';
 
 export const StepsSection = () => {
   const { t } = useTranslation();

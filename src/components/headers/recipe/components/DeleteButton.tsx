@@ -2,15 +2,15 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { i18nKeys } from '@i18n';
 import { useRecipeStore } from '@providers';
 import { Routes, SearchParamList } from '@types';
-import { getPath } from '@utils';
-import { Link, useLocalSearchParams } from 'expo-router';
+import { AnimatedScaleView } from '@ui';
+import { useLocalSearchParams } from 'expo-router';
 import { useTranslation } from 'react-i18next';
 import { Alert } from 'react-native';
-import { getTokens, XStack } from 'tamagui';
+import { getTokens } from 'tamagui';
 
-import { headerStyles } from './header.styles';
+import { headerStyles } from '../../header.styles';
 
-export const ViewRecipeHeaderRight = () => {
+export const DeleteButton = () => {
   const { t } = useTranslation();
   const { id } = useLocalSearchParams<SearchParamList<Routes.RecipeView>>();
   const { remove } = useRecipeStore();
@@ -40,22 +40,15 @@ export const ViewRecipeHeaderRight = () => {
   };
 
   return (
-    <XStack columnGap={4}>
-      <Link asChild href={getPath(Routes.RecipeEdit, { id })}>
-        <MaterialIcons
-          color={getTokens().color.textLight.val}
-          style={headerStyles.icon}
-          name="edit"
-          size={24}
-        />
-      </Link>
+    <AnimatedScaleView>
       <MaterialIcons
+        suppressHighlighting
         color={getTokens().color.textLight.val}
         style={headerStyles.icon}
         onPress={onDeletePress}
         name="delete"
         size={24}
       />
-    </XStack>
+    </AnimatedScaleView>
   );
 };
