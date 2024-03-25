@@ -32,6 +32,7 @@ export const TextAreaInput: FC<TextAreaInputProps> = ({
         </Text>
       )}
       <TextArea
+        autoCorrect={false}
         size="$4"
         borderWidth={2}
         borderRadius={5}

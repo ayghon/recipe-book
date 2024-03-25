@@ -48,6 +48,7 @@ export const TextInput: FC<TextInputProps> = ({
           </View>
         )}
         <Input
+          autoCorrect={false}
           ref={inputRef}
           selectionColor="grey"
           flex={1}
