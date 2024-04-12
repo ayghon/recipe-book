@@ -1,4 +1,3 @@
-import { MaterialIcons } from '@expo/vector-icons';
 import { i18nKeys } from '@i18n';
 import { SelectField, SwitchField, TextAreaField, TextField } from '@ui';
 import { FC } from 'react';
@@ -6,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { Separator, Text, useTheme, View, XStack } from 'tamagui';
 
 import { CountInputGroup } from './CountInputGroup';
+import { DeleteButton } from '../components/DeleteButton';
 
 type IngredientItemProps = {
   index: number;
@@ -30,13 +30,7 @@ export const IngredientItem: FC<IngredientItemProps> = ({ index, handleRemoveIng
           name={`ingredients.${index}.name`}
           isRequired
         />
-        <MaterialIcons
-          style={{ alignSelf: 'center' }}
-          name="delete"
-          size={24}
-          color={theme.red9.val}
-          onPress={() => handleRemoveIngredient(index)}
-        />
+        <DeleteButton onPress={() => handleRemoveIngredient(index)} />
       </XStack>
       <View paddingHorizontal={20} rowGap={16}>
         <SelectField

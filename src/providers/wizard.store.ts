@@ -27,6 +27,7 @@ type WizardValues = {
   isLastStep: boolean;
   lastStepIndex: number;
   canGoBack: boolean;
+  isDataInitialised: boolean;
 };
 
 type WizardState = WizardActions & WizardValues;
@@ -34,6 +35,7 @@ type WizardState = WizardActions & WizardValues;
 const initialState: WizardValues = {
   activeStepIndex: 0,
   canGoBack: false,
+  isDataInitialised: false,
   isLastStep: false,
   lastStepIndex: 0,
   steps: [],
@@ -70,6 +72,7 @@ export const useWizardStore = create<WizardState>()((set) => ({
       }
 
       return {
+        isDataInitialised: true,
         lastStepIndex: stepsData.length - 1,
         steps: stepsData.reduce<WizardStep[]>((acc, it, i) => {
           const id = Crypto.randomUUID();
@@ -116,10 +119,7 @@ export const useWizardStore = create<WizardState>()((set) => ({
         steps: changeActiveStepIndex(state.steps, nextActiveStepIndex),
       };
     }),
-  reset: () =>
-    set(() => {
-      return initialState;
-    }),
+  reset: () => set(initialState),
 }));
 
 const changeActiveStepIndex = (steps: WizardStep[], nextActiveStepIndex: number) =>

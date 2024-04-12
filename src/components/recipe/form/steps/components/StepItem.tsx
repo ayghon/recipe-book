@@ -1,10 +1,12 @@
 import { RecipeFormValues } from '@components';
-import { MaterialIcons } from '@expo/vector-icons';
 import { EditImageButton, EditImageButtonVariant, TextAreaField } from '@ui';
 import * as ImagePicker from 'expo-image-picker';
 import { FC } from 'react';
 import { useFormContext } from 'react-hook-form';
-import { Text, useTheme, View, XStack } from 'tamagui';
+import { Text, View, XStack } from 'tamagui';
+
+import { MoveButton } from './MoveButton';
+import { DeleteButton } from '../../components/DeleteButton';
 
 type StepItemProps = {
   index: number;
@@ -21,7 +23,6 @@ export const StepItem: FC<StepItemProps> = ({
   handleMoveDown,
   onChooseImagePress,
 }) => {
-  const theme = useTheme();
   const { watch } = useFormContext<RecipeFormValues>();
 
   const image = watch(`steps.${index}.image`);
@@ -33,24 +34,9 @@ export const StepItem: FC<StepItemProps> = ({
         <XStack>
           <TextAreaField name={`steps.${index}.explanation`} isRequired />
           <View rowGap={10}>
-            <MaterialIcons
-              name="arrow-upward"
-              size={24}
-              color={theme.gray9.val}
-              onPress={() => handleMoveUp(index)}
-            />
-            <MaterialIcons
-              name="delete"
-              size={24}
-              color={theme.red9.val}
-              onPress={() => handleRemoveStep(index)}
-            />
-            <MaterialIcons
-              name="arrow-downward"
-              size={24}
-              color={theme.gray9.val}
-              onPress={() => handleMoveDown(index)}
-            />
+            <MoveButton onPress={() => handleMoveUp(index)} direction="upward" />
+            <DeleteButton onPress={() => handleRemoveStep(index)} />
+            <MoveButton onPress={() => handleMoveDown(index)} direction="downward" />
           </View>
         </XStack>
         <EditImageButton

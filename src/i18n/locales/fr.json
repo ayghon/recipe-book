@@ -53,5 +53,8 @@
   "components.recipe_form.summary_section.title": "Résumé",
   "components.home.empty_list.message.part_1": "Vous n'avez pas encore de recette, créez-en une en appuyant sur le signe",
   "components.home.empty_list.message.part_2": "ci-dessus",
-  "components.recipe_form.wizard.footer.button.previous": "Retour"
+  "components.recipe_form.wizard.footer.button.previous": "Retour",
+  "common.error": "Erreur",
+  "settings.language.alert.error.description": "Le changement de langue n'a pas fonctionné.",
+  "unmatched.title.no_path": "Cet écran n'existe pas"
 }

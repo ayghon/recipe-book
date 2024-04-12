@@ -1,3 +1,3 @@
-export * from './RecipeCard';
+export * from './recipe/RecipeCard';
 export * from './Dot';
 export * from './Image';

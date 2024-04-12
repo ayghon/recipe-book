@@ -3,6 +3,7 @@
 export const i18nKeys = {
   common: {
     cancel: 'common.cancel',
+    error: 'common.error',
     measure_unit: {
       as_needed: 'common.measure_unit.as_needed',
       coffee_spoon: 'common.measure_unit.coffee_spoon',
@@ -159,7 +160,17 @@ export const i18nKeys = {
       title: 'settings.header.title',
     },
     language: {
+      alert: {
+        error: {
+          description: 'settings.language.alert.error.description',
+        },
+      },
       label: 'settings.language.label',
+    },
+  },
+  unmatched: {
+    title: {
+      no_path: 'unmatched.title.no_path',
     },
   },
 };

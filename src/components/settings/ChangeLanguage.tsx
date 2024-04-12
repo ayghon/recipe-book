@@ -4,6 +4,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { ListItemButton, SheetModal } from '@ui';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Alert } from 'react-native';
 import { Text, View } from 'tamagui';
 
 export const ChangeLanguage = () => {
@@ -12,9 +13,18 @@ export const ChangeLanguage = () => {
   const [isLanguageModalOpen, setIsLanguageModalOpen] = useState(false);
 
   const handleLanguagePress = async (value: string) => {
-    await changeLanguage(value);
-    await AsyncStorage.setItem(StorageKeys.Language, value);
-    setIsLanguageModalOpen(false);
+    try {
+      await changeLanguage(value, (error) => {
+        if (error) {
+          throw new Error();
+        }
+      });
+      await AsyncStorage.setItem(StorageKeys.Language, value);
+      setIsLanguageModalOpen(false);
+    } catch {
+      Alert.alert(t(i18nKeys.common.error), t(i18nKeys.settings.language.alert.error.description));
+      setIsLanguageModalOpen(false);
+    }
   };
 
   return (

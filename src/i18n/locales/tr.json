@@ -53,5 +53,8 @@
   "components.recipe_form.summary_section.title": "Özet",
   "components.home.empty_list.message.part_1": "Henüz tarifiniz yok, yukarıdaki",
   "components.home.empty_list.message.part_2": "işarete basarak tarifinizi oluşturun",
-  "components.recipe_form.wizard.footer.button.previous": "Dön"
+  "components.recipe_form.wizard.footer.button.previous": "Dön",
+  "common.error": "Hata",
+  "settings.language.alert.error.description": "Dili değiştirmek başarısız oldu.",
+  "unmatched.title.no_path": "Bu ekran mevcut değil"
 }
